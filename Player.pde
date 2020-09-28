@@ -1,13 +1,8 @@
 class Player extends Gameobject {
 
-	long currentTime;
-	float deltaTime;
-	float time;
-
-	PVector bulletSpeed = new PVector(0,-1);
+	PVector bulletSpeed = new PVector(0,-4f);
 
 	float playerSpeed = 8f;
-	int size = 10;
 
 	public Player(){
 
@@ -16,11 +11,11 @@ class Player extends Gameobject {
 	}
 
 	void move(){
-		transform.velocity.x = mouseX - transform.position.x;
-		transform.velocity.y = mouseY - transform.position.y;
+		velocity.x = mouseX - position.x;
+		velocity.y = mouseY - position.y;
 
-		transform.velocity.limit(playerSpeed);
-		transform.position.add(transform.velocity);
+		velocity.limit(playerSpeed);
+		position.add(velocity);
 	}
 
 	void action(){
