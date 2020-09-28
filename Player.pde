@@ -4,7 +4,7 @@ class Player extends Gameobject {
 	float deltaTime;
 	float time;
 
-	PVector bulletSpeed = new PVector(0,10);
+	PVector bulletSpeed = new PVector(0,-1);
 
 	float playerSpeed = 8f;
 	int size = 10;
@@ -24,7 +24,7 @@ class Player extends Gameobject {
 	}
 
 	void fire(){
-		new Bullet(1,bulletSpeed);
+		new Bullet(1,bulletSpeed,transform.position);
 	}
 
 	
