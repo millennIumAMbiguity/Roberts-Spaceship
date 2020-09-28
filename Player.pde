@@ -9,13 +9,14 @@ class Player extends Gameobject {
 
 	public Player(){
 		addToScene();
+		transform = new Transform();
+		collisionSize = 8;
 		objColor = color(0,255,0);
-
 	}
 
 	void move(){
-		transform.velocity.x = transform.position.x - mouseX;
-		transform.velocity.y = transform.position.y - mouseY;
+		transform.velocity.x = mouseX - transform.position.x;
+		transform.velocity.y = mouseY - transform.position.y;
 
 		transform.velocity.limit(playerSpeed);
 
