@@ -1,6 +1,6 @@
 void draw()
 {
 
-	background();
+	background(0);
 
 }
