@@ -1,6 +1,9 @@
 public class Gameobject {
 
 	Transform transform;
+	PVector position;
+	PVector velocity;
+
 	float collisionSize;
 	int id;
 	int objColor;
@@ -15,6 +18,8 @@ public class Gameobject {
 	Gameobject() {
 		addToScene();
 		transform = new Transform();
+		position = transform.position;
+		velocity = transform.velocity;
 		collisionSize = 8;
 		objColor = color(255);
 	}
@@ -30,18 +35,18 @@ public class Gameobject {
 
 	void draw() {
 		fill(objColor);
-		ellipse(transform.position.x, transform.position.y, collisionSize, collisionSize);
+		ellipse(position.x, position.y, collisionSize, collisionSize);
 	}
 
 	void move() {
-		transform.position.add(transform.velocity);
+		position.add(velocity);
 	}
 
 	boolean collision(Gameobject obj) {
 		if (collisionLayer == obj.collisionLayer)
 			return false;
 
-		return  transform.position.dist(obj.transform.position) < collisionSize;
+		return  position.dist(obj.position) < collisionSize;
 	}
 
 }
