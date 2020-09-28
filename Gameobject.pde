@@ -42,11 +42,20 @@ public class Gameobject {
 		position.add(velocity);
 	}
 
+	void outOfBounds(){
+		if (collisionLayer != 0)
+			if (position.x < -collisionSize || position.x > width +collisionSize ||
+				position.y < -collisionSize || position.y > height+collisionSize)
+			{
+				removeFromScene();
+			}
+	}
+
 	boolean collision(Gameobject obj) {
 		if (collisionLayer == obj.collisionLayer)
 			return false;
 
-		return  position.dist(obj.position) < collisionSize;
+		return  position.dist(obj.position) < collisionSize + obj.collisionSize;
 	}
 
 }
