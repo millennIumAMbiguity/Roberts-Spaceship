@@ -1,3 +1,3 @@
-class Player {
-	
+class Player extends Gameobject {
+
 }
