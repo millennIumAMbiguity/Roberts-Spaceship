@@ -6,10 +6,13 @@ public class Gameobject {
 
 	int id;
 
+	int objColor;
+
 	Gameobject() {
 		addToScene();
 		transform = new Transform();
 		collisionSize = 8;
+		objColor = color(255);
 	}
 
 	void addToScene() {
@@ -21,9 +24,14 @@ public class Gameobject {
 		scene.remove(id);
 	}
 
-	void draw() {}
+	void draw() {
+		fill(objColor);
+		ellipse(transform.position.x, transform.position.y, collisionSize, collisionSize);
+	}
 
-	void move() {}
+	void move() {
+		transform.position.add(transform.velocity);
+	}
 
 	boolean collision(Gameobject obj) {
 		return  transform.position.dist(obj.transform.position) < collisionSize;
