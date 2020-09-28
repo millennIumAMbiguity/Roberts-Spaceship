@@ -8,6 +8,8 @@ class Player extends Gameobject {
 	float yMov = 0;
 	float speed = 200f;
 
+	float playerSpeed = 8f;
+
 	PVector pos = new PVector();
 
 
@@ -15,8 +17,14 @@ class Player extends Gameobject {
 
 	}
 
-	void movePlayer()
+	void move()
 	{
-		
+		transform.velocity.x = transform.position.x - mouseX;
+		transform.velocity.y = transform.position.y - mouseY;
+
+		transform.velocity.limit(playerSpeed);
+
+		transform.position.add(transform.velocity);
+
 	}
 }

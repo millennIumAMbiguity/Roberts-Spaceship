@@ -15,9 +15,9 @@ public class Gameobject {
 		scene.remove(id);
 	}
 
-	void draw() {
+	void draw() {}
 
-	}
+	void move() {}
 
 	boolean collision(Gameobject obj) {
 		return  transform.position.dist(obj.transform.position) < collisionSize;
