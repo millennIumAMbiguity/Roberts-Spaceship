@@ -24,7 +24,7 @@ class Player extends Gameobject {
 	}
 
 	void fire(){
-		new Bullet(1,bulletSpeed,transform.position);
+		new Bullet(1,bulletSpeed,position.copy());
 	}
 
 	

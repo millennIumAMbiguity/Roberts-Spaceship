@@ -7,7 +7,7 @@ void draw(){
 	}
 
 	for (Gameobject obj : scene) {
-		obj.outOfBounds();
+		//obj.outOfBounds();
 	}
 
 	for (Gameobject obj : scene) {
