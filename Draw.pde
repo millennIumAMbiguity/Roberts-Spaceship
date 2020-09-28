@@ -12,6 +12,10 @@ void draw(){
 	}
 
 	for (Gameobject obj : ghostScene) {
+		obj.collision();
+	}
+
+	for (Gameobject obj : ghostScene) {
 		obj.action();
 	}
 

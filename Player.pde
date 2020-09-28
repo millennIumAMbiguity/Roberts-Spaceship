@@ -1,15 +1,15 @@
 class Player extends Gameobject {
 
-	PVector bulletSpeed = new PVector(0,-8f);
+	PVector bulletSpeed = new PVector(0,-1.5f);
 
 	float playerSpeed = 8f;
 
-	long fireDelay = 200;
+	long fireDelay = 400;
 	long nextfire;
 
 	public Player(){
 
-		collisionLayer = 1;
+		collisionLayer = 0;
 		objColor = color(0,255,0);
 	}
 

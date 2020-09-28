@@ -6,6 +6,6 @@ void setup()
   time = millis();
 
   new Player();
-  new Enemy();
+  waveController = new WaveController();
   ghostScene = new ArrayList<Gameobject>(scene);
 }
