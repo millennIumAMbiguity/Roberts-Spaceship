@@ -4,5 +4,5 @@ void setup()
   fill(127);
 
   new Player();
-  scene = new ArrayList<Gameobject>(ghostScene);
+  ghostScene = new ArrayList<Gameobject>(scene);
 }

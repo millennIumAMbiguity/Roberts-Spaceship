@@ -23,7 +23,7 @@ class Player extends Gameobject {
 		transform.position.add(transform.velocity);
 	}
 
-	void fire(){
+	void action(){
 		new Bullet(1,bulletSpeed,position.copy());
 	}
 

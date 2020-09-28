@@ -2,24 +2,24 @@ void draw(){
 
 	background(0);
 
-	for (Gameobject obj : scene) {
+	for (Gameobject obj : ghostScene) {
 		obj.move();
 	}
 
-	for (Gameobject obj : scene) {
+	for (Gameobject obj : ghostScene) {
 		obj.outOfBounds();
 	}
 
-	for (Gameobject obj : scene) {
-		obj.fire();
+	for (Gameobject obj : ghostScene) {
+		obj.action();
 	}
 
-	for (Gameobject obj : scene) {
+	for (Gameobject obj : ghostScene) {
 		obj.draw();
 	}
 
 
 	//add new scene objects to scene
-	scene = new ArrayList<Gameobject>(ghostScene);
+	ghostScene = new ArrayList<Gameobject>(scene);
 
 }

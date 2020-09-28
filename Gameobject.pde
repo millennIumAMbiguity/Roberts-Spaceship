@@ -25,16 +25,16 @@ public class Gameobject {
 	}
 
 	void addToScene() {
-		id = ghostScene.size();
+		id = scene.size();
 		//scene.add(this);
-		ghostScene.add(this);
+		scene.add(this);
 	}
 
 	void removeFromScene() {
-		ghostScene.remove(id);
-		int sceneSize = ghostScene.size();
+		scene.remove(id);
+		int sceneSize = scene.size();
 		for (int i = id; i < sceneSize; ++i) {
-			ghostScene.get(i).id--;
+			scene.get(i).id--;
 		}
 	}
 
@@ -56,9 +56,7 @@ public class Gameobject {
 			}
 	}
 
-	void fire(){
-		
-	}
+	void action() {}
 
 	boolean collision(Gameobject obj) {
 		//don't collide with objects on the same layer
