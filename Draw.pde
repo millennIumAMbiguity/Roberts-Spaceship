@@ -20,10 +20,6 @@ void draw(){
 
 
 	//add new scene objects to scene
-	for (Gameobject obj : newSceneItems) {
-		obj.id = scene.size();
-		scene.add(obj);
-	}
-	newSceneItems = new ArrayList<Gameobject>();
+	scene = new ArrayList<Gameobject>(ghostScene);
 
 }

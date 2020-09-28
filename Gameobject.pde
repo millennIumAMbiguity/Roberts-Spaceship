@@ -27,11 +27,18 @@ public class Gameobject {
 	void addToScene() {
 		//id = scene.size();
 		//scene.add(this);
-		newSceneItems.add(this);
+		ghostScene.add(this);
 	}
 
 	void removeFromScene() {
-		scene.remove(id);
+		if (collisionLayer == 0)
+			return;
+		
+		ghostScene.remove(id);
+		int sceneSize = ghostScene.size();
+		for (int i = id +1; i < sceneSize; ++i) {
+			ghostScene.get(i).id--;
+		}
 	}
 
 	void draw() {
