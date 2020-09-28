@@ -26,7 +26,6 @@ public class Gameobject {
 
 	void addToScene() {
 		id = scene.size();
-		//scene.add(this);
 		scene.add(this);
 	}
 

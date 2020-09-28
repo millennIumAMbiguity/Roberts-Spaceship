@@ -1,5 +1,6 @@
 void draw(){
 
+	time = millis();
 	background(0);
 
 	for (Gameobject obj : ghostScene) {

@@ -4,6 +4,9 @@ class Player extends Gameobject {
 
 	float playerSpeed = 8f;
 
+	long fireDelay = 500;
+	long nextfire;
+
 	public Player(){
 
 		collisionLayer = 1;
@@ -19,7 +22,10 @@ class Player extends Gameobject {
 	}
 
 	void action(){
-		new Bullet(1,bulletSpeed,position.copy());
+		if (nextfire < time){
+			nextfire = time + fireDelay;
+			new Bullet(1,bulletSpeed,position.copy());
+		}
 	}
 
 	

@@ -3,3 +3,4 @@ ArrayList<Gameobject> ghostScene = new ArrayList<Gameobject>();
 
 WaveController waveController = new WaveController();
 boolean gameOver;
+long time;

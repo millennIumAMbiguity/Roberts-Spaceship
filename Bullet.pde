@@ -4,7 +4,12 @@ class Bullet extends Gameobject{
 		this.collisionLayer = collisionLayer;
 		this.position = position;
 		this.velocity = velocity;
+		collisionSize = 2;
 	}
 
+	void draw() {
+		fill(objColor);
+		rect(position.x-0.5f, position.y-1, 1, 3);
+	}
 	
 }
