@@ -23,7 +23,5 @@ class Player extends Gameobject {
 
 	}
 
-	void draw(){
-		ellipse(transform.position.x,transform.position.y,size,size/2);
-	}
+	
 }
