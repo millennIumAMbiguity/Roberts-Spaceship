@@ -4,21 +4,16 @@ class Player extends Gameobject {
 	float deltaTime;
 	float time;
 
-	float xMov = 0;
-	float yMov = 0;
-	float speed = 200f;
-
 	float playerSpeed = 8f;
-
-	PVector pos = new PVector();
-
+	int size = 10;
 
 	public Player(){
+		addToScene();
+		objColor = color(0,255,0);
 
 	}
 
-	void move()
-	{
+	void move(){
 		transform.velocity.x = transform.position.x - mouseX;
 		transform.velocity.y = transform.position.y - mouseY;
 
@@ -26,5 +21,9 @@ class Player extends Gameobject {
 
 		transform.position.add(transform.velocity);
 
+	}
+
+	void draw(){
+		ellipse(transform.position.x,transform.position.y,size,size/2);
 	}
 }
