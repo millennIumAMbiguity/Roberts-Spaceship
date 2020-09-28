@@ -51,6 +51,10 @@ public class Gameobject {
 			}
 	}
 
+	void fire(){
+		
+	}
+
 	boolean collision(Gameobject obj) {
 		if (collisionLayer == obj.collisionLayer)
 			return false;
