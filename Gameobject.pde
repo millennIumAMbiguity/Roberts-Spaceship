@@ -25,18 +25,15 @@ public class Gameobject {
 	}
 
 	void addToScene() {
-		//id = scene.size();
+		id = ghostScene.size();
 		//scene.add(this);
 		ghostScene.add(this);
 	}
 
 	void removeFromScene() {
-		if (collisionLayer == 0)
-			return;
-		
 		ghostScene.remove(id);
 		int sceneSize = ghostScene.size();
-		for (int i = id +1; i < sceneSize; ++i) {
+		for (int i = id; i < sceneSize; ++i) {
 			ghostScene.get(i).id--;
 		}
 	}
@@ -64,10 +61,18 @@ public class Gameobject {
 	}
 
 	boolean collision(Gameobject obj) {
+		//don't collide with objects on the same layer
 		if (collisionLayer == obj.collisionLayer)
 			return false;
 
-		return  position.dist(obj.position) < collisionSize + obj.collisionSize;
+		float collisionDist = (collisionSize + obj.collisionSize)/2f;
+
+		//check if height is in range for a collision
+		if (obj.position.y > position.y + collisionDist ||
+			obj.position.y < position.y - collisionDist)
+			return false;
+
+		return  position.dist(obj.position) < collisionDist;
 	}
 
 }
