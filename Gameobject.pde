@@ -1,4 +1,5 @@
-class Gameogject {
+public class Gameobject {
 
+	Transform transform;
 
 }
