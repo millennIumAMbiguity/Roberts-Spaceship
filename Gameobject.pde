@@ -4,11 +4,22 @@ public class Gameobject {
 
 	float collisionSize;
 
-	void draw(){
+	int id;
+
+	void addToScene() {
+		id = scene.size();
+		scene.add(this);
+	}
+
+	void removeFromScene() {
+		scene.remove(id);
+	}
+
+	void draw() {
 
 	}
 
-	boolean collision(Gameobject obj){
+	boolean collision(Gameobject obj) {
 		return  transform.position.dist(obj.transform.position) < collisionSize;
 	}
 
