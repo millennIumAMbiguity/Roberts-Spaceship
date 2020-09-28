@@ -6,6 +6,12 @@ public class Gameobject {
 
 	int id;
 
+	Gameobject() {
+		addToScene();
+		transform = new Transform();
+		collisionSize = 8;
+	}
+
 	void addToScene() {
 		id = scene.size();
 		scene.add(this);
