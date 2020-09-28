@@ -1,5 +1,4 @@
-void draw()
-{
+void draw(){
 
 	background(0);
 
