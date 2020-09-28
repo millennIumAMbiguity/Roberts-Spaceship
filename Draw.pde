@@ -6,12 +6,13 @@ void draw(){
 		obj.move();
 	}
 
-	//scene.get(0).fire();
+	for (Gameobject obj : scene) {
+		obj.outOfBounds();
+	}
 
 	for (Gameobject obj : scene) {
 		obj.fire();
 	}
-
 
 	for (Gameobject obj : scene) {
 		obj.draw();
