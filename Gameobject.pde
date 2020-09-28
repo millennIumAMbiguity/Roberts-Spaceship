@@ -1,12 +1,16 @@
 public class Gameobject {
 
 	Transform transform;
-
 	float collisionSize;
-
 	int id;
-
 	int objColor;
+
+	int collisionLayer;
+	/*
+	0: player;
+	1: player bullets;
+	2: enemys and enemys bullets;
+	*/
 
 	Gameobject() {
 		addToScene();
@@ -34,6 +38,9 @@ public class Gameobject {
 	}
 
 	boolean collision(Gameobject obj) {
+		if (collisionLayer == obj.collisionLayer)
+			return false;
+
 		return  transform.position.dist(obj.transform.position) < collisionSize;
 	}
 
