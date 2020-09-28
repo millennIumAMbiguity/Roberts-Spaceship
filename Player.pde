@@ -8,9 +8,6 @@ class Player extends Gameobject {
 	int size = 10;
 
 	public Player(){
-		addToScene();
-		transform = new Transform();
-		collisionSize = 8;
 		objColor = color(0,255,0);
 	}
 
@@ -21,7 +18,6 @@ class Player extends Gameobject {
 		transform.velocity.limit(playerSpeed);
 
 		transform.position.add(transform.velocity);
-
 	}
 
 	
