@@ -1,10 +1,10 @@
 class Player extends Gameobject {
 
-	PVector bulletSpeed = new PVector(0,-4f);
+	PVector bulletSpeed = new PVector(0,-8f);
 
 	float playerSpeed = 8f;
 
-	long fireDelay = 500;
+	long fireDelay = 200;
 	long nextfire;
 
 	public Player(){
