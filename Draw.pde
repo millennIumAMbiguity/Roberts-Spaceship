@@ -24,7 +24,10 @@ void draw(){
 
 		dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
 	} else {
+		textAlign(CENTER);
 		text("Game Over", width/2, height/2);
+		text("Final score: " + score, width/2, height/2 +30 );
+		text("Distance traveled: " + dist +"m", width/2, height/2 +60);
 	}
 
 	for (Gameobject obj : ghostScene) {
