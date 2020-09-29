@@ -1,5 +1,5 @@
 public class WaveController {
-	int waveCount;
+	int waveCount = 0;
 
 	int wave1Amount;
 	int wave2Amount;
@@ -39,6 +39,15 @@ public class WaveController {
 	}
 
 	Wave newWave(int waveId){
+
+		switch ((int)random(0, 3)) {
+			case 0 :
+			return new WaveFormationShooter(waveId);
+
+			case 1 :
+			return new WaveFormationUnit(waveId);
+		}
+
 		return new WaveFormationRandomAsteroids(waveId);
 	}
 
