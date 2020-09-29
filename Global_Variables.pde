@@ -5,4 +5,7 @@ WaveController waveController;
 boolean gameover;
 long time;
 
-static float scrollSpeed = 0.5f;
+float scrollSpeed = 0.5f;
+
+int score;
+int dist;
