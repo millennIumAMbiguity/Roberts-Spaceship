@@ -3,6 +3,8 @@ public class Wave extends Gameobject{
 	Enemy[] units = new Enemy[0];
 	int wave;
 
+	boolean cleenWave = true;
+
 	Wave(int wave) {
 		collisionLayer = -1;
 		this.wave = wave;
@@ -16,8 +18,6 @@ public class Wave extends Gameobject{
 		line(position.x - collisionSize, position.y, position.x + collisionSize, position.y);
 		line(position.x, position.y - collisionSize, position.x, position.y+ collisionSize);
 	}
-
-
 
 	void outOfBounds(){}
 

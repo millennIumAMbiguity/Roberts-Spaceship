@@ -102,8 +102,12 @@ public class Gameobject {
 					removeFromScene();
 				}
 			} else {
-				if (hp.sub(1))
+				if (hp.sub(1)){
+					if (collisionLayer == 2){
+						score += 20;
+					}
 					removeFromScene();
+				}
 			}
 			return true;
 		}

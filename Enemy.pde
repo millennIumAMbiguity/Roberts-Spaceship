@@ -20,19 +20,13 @@ class Enemy extends Gameobject{
 
 
 	void outOfBounds(){
-		if (collisionLayer != 0)
+		if (collisionLayer != 0){
 			if (position.y > height+collisionSize)
 			{
+				parent.cleenWave = false;
 				removeFromScene();
 				waveController.removeEnemy(parent.wave);
 			}
 		}
-
-		void action(){
-			if(position.y < 0){return;}
-			if (nextfire < time){
-				nextfire = time + fireDelay;
-				new Bullet(2,bulletSpeed,position.copy());
-			}
-		}
 	}
+}
