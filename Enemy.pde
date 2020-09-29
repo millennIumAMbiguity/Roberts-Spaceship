@@ -4,8 +4,6 @@ class Enemy extends Gameobject{
 
 	// firing variables
 
-
-
 	Enemy(PVector pos, PVector vel, Wave parent, int hp){
 		position = pos;
 		velocity = vel;
@@ -29,4 +27,12 @@ class Enemy extends Gameobject{
 			}
 		}
 	}
+
+	void fire() {
+		if (nextfire < time){
+			nextfire = time + fireDelay;
+			new Bullet(2,bulletSpeed,position.copy());
+		}
+	}
+
 }

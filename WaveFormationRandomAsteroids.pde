@@ -13,9 +13,18 @@ public class WaveFormationRandomAsteroids extends Wave{
 	}
 
 	void draw() {
-		 //debug draw
-		 super.draw();
-		 text("Wave.WaveFormationRandomAsteroids", position.x, position.y);
+		//debug draw
+		super.draw();
+		text("Wave.WaveFormationRandomAsteroids", position.x, position.y);
+	}
+
+	void action() {
+
+		for (Enemy obj : units) {
+			obj.fire();
 		}
 
 	}
+
+
+}
