@@ -67,7 +67,11 @@ public class Gameobject {
 
 	boolean collision(Gameobject obj) {
 
-		//sont collide with imune objects
+		//dont collide objects without collision
+		if (hp == null || obj.hp == null)
+			return false;
+
+		//dont collide with imune objects
 		if (hp.imunity() || obj.hp.imunity())
 			return false;
 
