@@ -84,8 +84,10 @@ public class Gameobject {
 
 		if ( position.dist(obj.position) < collisionDist) {
 			if (collisionLayer == 0){
-				if (hp.sub(1))
+				if (hp.sub(1)){
 					gameover = true;
+					removeFromScene();
+				}
 			} else {
 				if (hp.sub(1))
 					removeFromScene();
