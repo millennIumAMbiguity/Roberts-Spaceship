@@ -25,9 +25,9 @@ public class Health {
 		}
 
 		hitPoints-=hp;
+		immunityEndTime = time + immunityTime;
+		timeStamp = time;
 		if (hitPoints < 1) {
-			immunityEndTime = time + immunityTime;
-			timeStamp = time;
 			return true;
 		}
 		return false;
