@@ -5,8 +5,9 @@ public class WaveFormationRandomAsteroids extends Wave{
 
 		units = new Enemy[(int)sqrt(wave)*2+1];
 
-		for (Enemy obj : units) {
-			obj = new Enemy(new PVector(random(0, width), random(-height, 0)), 
+		for(int i =0; i < units.length; i++)
+		{
+			units[i] = new Enemy(new PVector(random(0, width), random(-height, 0)), 
 				velocity, //changing this wave velocity will change the velocity of all child "Enemy"s 
 				this,3);
 		}
@@ -21,6 +22,7 @@ public class WaveFormationRandomAsteroids extends Wave{
 	void action() {
 
 		for (Enemy obj : units) {
+			if(obj == null){return;}
 			obj.fire();
 		}
 
