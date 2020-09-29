@@ -27,6 +27,8 @@ class Enemy extends Gameobject{
 	}
 
 	void fire() {
+		if(position.y < 0)
+			return;
 		if (nextfire < time){
 			nextfire = time + fireDelay;
 			new Bullet(2,bulletSpeed,position.copy());
