@@ -5,7 +5,7 @@ class Bullet extends Gameobject{
 		this.position = position;
 		this.velocity = velocity;
 		collisionSize = 2;
-		hp = new Health(1);
+		hp = new Health(1, 0);
 	}
 
 	void draw() {

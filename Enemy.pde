@@ -6,7 +6,7 @@ class Enemy extends Gameobject{
 		position = pos;
 		velocity = vel;
 		this.parent = parent;
-		this.hp = new Health(hp);
+		this.hp = new Health(hp, 200);
 		collisionLayer = 2;
 		objColor = color(255,0,0);
 	}

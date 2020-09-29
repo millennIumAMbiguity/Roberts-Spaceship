@@ -66,6 +66,11 @@ public class Gameobject {
 	}
 
 	boolean collision(Gameobject obj) {
+
+		//sont collide with imune objects
+		if (hp.imunity() || obj.hp.imunity())
+			return false;
+
 		//don't collide with objects on the same layer
 		if (collisionLayer == obj.collisionLayer)
 			return false;

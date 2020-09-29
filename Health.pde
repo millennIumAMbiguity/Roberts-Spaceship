@@ -2,7 +2,11 @@ public class Health {
 	int hitPoints;
 	int maxHP;
 
-	Health(int hp){
+	long immunityEndTime;
+	long immunityTime;
+
+	Health(int hp, long immunityTime){
+		this.immunityTime = immunityTime;
 		hitPoints = maxHP = hp;
 	}
 
@@ -15,10 +19,19 @@ public class Health {
 	}
 
 	boolean sub(int hp){
+		if (immunityEndTime > time){
+			return false;
+		}
+
 		hitPoints-=hp;
-		if (hitPoints < 1){
+		if (hitPoints < 1) {
+			immunityEndTime = time + immunityTime;
 			return true;
 		}
 		return false;
+	}
+
+	boolean imunity(){
+		return immunityEndTime > time;
 	}
 }
