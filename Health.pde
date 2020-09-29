@@ -4,6 +4,7 @@ public class Health {
 
 	long immunityEndTime;
 	long immunityTime;
+	long timeStamp;
 
 	Health(int hp, long immunityTime){
 		this.immunityTime = immunityTime;
@@ -26,12 +27,13 @@ public class Health {
 		hitPoints-=hp;
 		if (hitPoints < 1) {
 			immunityEndTime = time + immunityTime;
+			timeStamp = time;
 			return true;
 		}
 		return false;
 	}
 
 	boolean imunity(){
-		return immunityEndTime > time;
+		return immunityEndTime > time && timeStamp != time;
 	}
 }
