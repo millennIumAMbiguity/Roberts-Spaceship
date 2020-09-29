@@ -6,6 +6,8 @@ public class Gameobject {
 
 	Health hp;
 
+	
+
 	float collisionSize;
 	int id;
 	int objColor;
@@ -55,17 +57,17 @@ public class Gameobject {
 			{
 				removeFromScene();
 			}
-	}
-
-	void action() {}
-
-	void collision(){
-		for (Gameobject obj : ghostScene) {
-			collision(obj);
 		}
-	}
 
-	boolean collision(Gameobject obj) {
+		void action() {}
+
+		void collision(){
+			for (Gameobject obj : ghostScene) {
+				collision(obj);
+			}
+		}
+
+		boolean collision(Gameobject obj) {
 
 		//dont collide objects without collision
 		if (hp == null || obj.hp == null)
@@ -73,7 +75,7 @@ public class Gameobject {
 
 		//dont collide with imune objects
 		if (hp.imunity() || obj.hp.imunity())
-		return false;
+			return false;
 		
 
 		//don't collide with objects on the same layer

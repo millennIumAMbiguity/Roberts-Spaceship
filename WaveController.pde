@@ -10,7 +10,7 @@ public class WaveController {
 	long spawnNextWave;
 
 	WaveController() {
- 		spawnWave();
+		spawnWave();
 	}
 
 	void removeEnemy(int waveId) {
