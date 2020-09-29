@@ -2,6 +2,8 @@ class Enemy extends Gameobject{
 
 	Wave parent;
 
+	boolean exist = true;
+
 	Enemy(PVector pos, PVector vel, Wave parent, int hp){
 		position = pos;
 		velocity = vel;
@@ -23,6 +25,15 @@ class Enemy extends Gameobject{
 				removeFromScene();
 				waveController.removeEnemy(parent.wave);
 			}
+		}
+	}
+
+	void removeFromScene() {
+		exist = false;
+		scene.remove(id);
+		int sceneSize = scene.size();
+		for (int i = id; i < sceneSize; ++i) {
+			scene.get(i).id--;
 		}
 	}
 
