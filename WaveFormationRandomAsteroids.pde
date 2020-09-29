@@ -22,7 +22,6 @@ public class WaveFormationRandomAsteroids extends Wave{
 	void action() {
 
 		for (Enemy obj : units) {
-			if(obj == null){return;}
 			obj.fire();
 		}
 
