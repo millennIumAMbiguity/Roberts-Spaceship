@@ -59,17 +59,17 @@ public class Gameobject {
 			{
 				removeFromScene();
 			}
+	}
+
+	void action() {}
+
+	void collision(){
+		for (Gameobject obj : ghostScene) {
+			collision(obj);
 		}
+	}
 
-		void action() {}
-
-		void collision(){
-			for (Gameobject obj : ghostScene) {
-				collision(obj);
-			}
-		}
-
-		boolean collision(Gameobject obj) {
+	boolean collision(Gameobject obj) {
 
 		//dont collide objects without collision
 		if (hp == null || obj.hp == null)
