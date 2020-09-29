@@ -9,6 +9,7 @@ class Player extends Gameobject {
 
 	public Player(){
 
+		hp = new Health(3);
 		collisionLayer = 0;
 		objColor = color(0,255,0);
 	}

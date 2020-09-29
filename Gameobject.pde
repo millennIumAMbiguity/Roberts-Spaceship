@@ -22,7 +22,6 @@ public class Gameobject {
 		transform = new Transform();
 		position = transform.position;
 		velocity = transform.velocity;
-		hp = new Health(3);
 		collisionSize = 8;
 		objColor = color(255);
 	}
