@@ -23,6 +23,10 @@ void draw(){
 		}
 
 		dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
+		text("score: " + score, 0, 8);
+		text("distance: " + dist + "m", 0, 16);
+		text("wave: " + waveController.waveCount, 0, 26);
+
 	} else {
 		textAlign(CENTER);
 		text("Game Over", width/2, height/2);
@@ -34,9 +38,7 @@ void draw(){
 		obj.draw();
 	}
 
-	text("score: " + score, 0, 8);
-	text("distance: " + dist + "m", 0, 16);
-	text("wave: " + waveController.waveCount, 0, 26);
+
 
 
 	//add new scene objects to scene
