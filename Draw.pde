@@ -24,7 +24,7 @@ void draw(){
 	}
 
 	if (!gameover)
-	dist = 100 + (int)(time/30) - (int)ghostScene.get(0).position.y;
+	dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
 	text("score: " + score, 0, 16);
 	text("distance: " + dist + "m", 0, 32);
 

@@ -3,9 +3,7 @@ class Enemy extends Gameobject{
 	Wave parent;
 
 	// firing variables
-	PVector bulletSpeed = new PVector(0,1);
-	long fireDelay = 2000;
-	long nextfire;
+
 
 
 	Enemy(PVector pos, PVector vel, Wave parent, int hp){
@@ -15,6 +13,9 @@ class Enemy extends Gameobject{
 		this.hp = new Health(hp, 200);
 		collisionLayer = 2;
 		objColor = color(255,0,0);
+
+		bulletSpeed = new PVector(0,1);
+		fireDelay = 2000;
 	}
 
 

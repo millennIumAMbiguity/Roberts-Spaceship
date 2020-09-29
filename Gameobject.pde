@@ -6,7 +6,9 @@ public class Gameobject {
 
 	Health hp;
 
-	
+	PVector bulletSpeed;
+	long fireDelay;
+	long nextfire;
 
 	float collisionSize;
 	int id;
