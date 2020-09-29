@@ -3,7 +3,7 @@ public class WaveFormationRandomAsteroids extends Wave{
 	WaveFormationRandomAsteroids(int wave) {
 		super(wave);
 
-		units = new Enemy[(int)sqrt(wave)*2+1];
+		units = new Enemy[(int)sqrt(wave)*11+1];
 
 		for(int i =0; i < units.length; i++){
 			units[i] = new Enemy(new PVector(random(0, width), random(-height, 0)), 
