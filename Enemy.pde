@@ -2,9 +2,6 @@ class Enemy extends Gameobject{
 
 	Wave parent;
 
-	// firing variables
-
-
 
 	Enemy(PVector pos, PVector vel, Wave parent, int hp){
 		position = pos;
