@@ -86,7 +86,7 @@ public class Gameobject {
 			if (collisionLayer == 0){
 				if (hp.sub(1))
 					gameover = true;
-			} else if (collisionLayer == 2){
+			} else {
 				if (hp.sub(1))
 					removeFromScene();
 			}
