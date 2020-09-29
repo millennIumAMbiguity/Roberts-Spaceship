@@ -24,7 +24,6 @@ class Enemy extends Gameobject{
 			{
 				parent.cleenWave = false;
 				removeFromScene();
-				waveController.removeEnemy(parent.wave);
 			}
 		}
 	}
@@ -32,6 +31,7 @@ class Enemy extends Gameobject{
 	void removeFromScene() {
 		exist = false;
 		scene.remove(id);
+		waveController.removeEnemy(parent.wave);
 		int sceneSize = scene.size();
 		for (int i = id; i < sceneSize; ++i) {
 			scene.get(i).id--;
