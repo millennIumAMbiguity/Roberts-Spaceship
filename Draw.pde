@@ -37,6 +37,7 @@ void draw(){
 		text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*4);
 		if(int(max(waveController.spawnNextWave -time,0)) > 0){
 		textAlign(CENTER);
+		if (waveController.willSpawn)
 		text("Next wave in: " + (int)max(waveController.spawnNextWave - time,0)/1000+ " s" , width/2, spacing*6);
 }
 	} 
