@@ -1,3 +1,6 @@
+int offsetFromSide = 20;
+int spacing = 15;
+
 void draw(){
 
 	time = millis();
@@ -23,9 +26,10 @@ void draw(){
 		}
 
 		dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
-		text("score: " + score, 0, 8);
-		text("distance: " + dist + "m", 0, 16);
-		text("wave: " + waveController.waveCount, 0, 26);
+		text("Score: " + score, offsetFromSide, spacing);
+		text("Distance: " + dist + "m", offsetFromSide, spacing*2);
+		text("Wave: " + waveController.waveCount, offsetFromSide, spacing*3);
+		text("Lives :" + player.hp.hitPoints, offsetFromSide, spacing*4);
 
 	} else {
 		textAlign(CENTER);
