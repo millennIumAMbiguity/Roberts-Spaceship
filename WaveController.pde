@@ -25,14 +25,16 @@ public class WaveController {
 	void removeEnemy(int waveId) {
 		if (waveId == waveCount) {
 			wave1Amount--;
-			if (wave1Amount < 1 && spawnNextWave < time){
-				spawnNextWave = time + spawnDelay;
+			if (wave1Amount < 1){
+				if (spawnNextWave < time)
+					spawnNextWave = time + spawnDelay;
 				willSpawn = true;
 			}
 		} else {
 			wave2Amount--;
-			if (wave2Amount < 1 && spawnNextWave < time){
-				spawnNextWave = time + spawnDelay;
+			if (wave2Amount < 1){
+				if (spawnNextWave < time)
+					spawnNextWave = time + spawnDelay;
 				willSpawn = true;
 			}
 		}
