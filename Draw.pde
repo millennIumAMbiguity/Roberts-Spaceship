@@ -41,9 +41,9 @@ void draw(){
 	} 
 	else {
 		textAlign(CENTER);
-		text("Game Over", width/2, height/2);
+		text("Game Over", width/2-spacing, height/2);
 		text("Final score: " + score, width/2, height/2 +30 );
-		text("Distance traveled: " + dist +"m", width/2, height/2 +60);
+		text("Distance traveled: " + dist +"m", width/2+ spacing, height/2 +60);
 	}
 
 	for (Star star : starsInScene) {
