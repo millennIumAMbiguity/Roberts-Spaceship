@@ -26,9 +26,11 @@ public class WaveFormationUnit extends Wave{
 
 	void draw() {
 		//debug draw
+		/*
 		super.draw();
 		text("Wave.WaveFormationUnit", position.x, position.y);
 		text(units.length, position.x, position.y+8);
+		*/
 	}
 
 	void move() {

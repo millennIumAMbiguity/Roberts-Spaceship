@@ -14,9 +14,11 @@ public class WaveFormationShooter extends Wave{
 
 	void draw() {
 		//debug draw
+		/*
 		super.draw();
 		text("Wave.WaveFormationShooter", position.x, position.y);
 		text(units.length, position.x, position.y+8);
+		*/
 	}
 
 	void move() {

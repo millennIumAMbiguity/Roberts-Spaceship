@@ -2,6 +2,7 @@ void setup()
 {
   stroke(255);
   fill(127);
+  noCursor();
 
   time = millis();
 

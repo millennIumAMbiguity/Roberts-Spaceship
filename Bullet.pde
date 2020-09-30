@@ -13,7 +13,7 @@ class Bullet extends Gameobject{
 	void draw() {
 		fill(objColor);
 		noStroke();
-		rect(position.x-0.5f, position.y-1, 1, 3);
+		rect(position.x-1f, position.y-2, 2, 5);
 	}
 	
 }

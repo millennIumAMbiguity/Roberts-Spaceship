@@ -28,6 +28,7 @@ void draw(){
 			obj.action();
 		}
 
+		fill(0xFF718EA4);
 		dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
 		textAlign(LEFT);
 		text("Score: " + score, offsetFromSide, spacing);
