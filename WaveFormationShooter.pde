@@ -1,5 +1,7 @@
 public class WaveFormationShooter extends Wave{
 
+	int unitHP = 2;
+
 	WaveFormationShooter(int wave) {
 		super(wave);
 
@@ -8,7 +10,7 @@ public class WaveFormationShooter extends Wave{
 		for(int i =0; i < units.length; i++) {
 			units[i] = new Enemy(new PVector(i%2==0?width/2+((i*16)%(width/2))+8:width/2-((i*16)%(width/2))-8, -((i*16)/(width/2))*32), 
 				velocity.copy(), 
-				this,3);
+				this,unitHP);
 		}
 	}
 

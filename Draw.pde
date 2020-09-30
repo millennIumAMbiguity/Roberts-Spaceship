@@ -6,8 +6,6 @@ void draw(){
 	time = millis();
 	background(0);
 
-
-
 	if (!gameover){
 
 		waveController.update();
