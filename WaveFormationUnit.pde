@@ -3,7 +3,7 @@ public class WaveFormationUnit extends Wave{
 	int unitHP = 2;
 	PVector[] parts;
 	int[] partsId;
-
+	
 	WaveFormationUnit(int wave) {
 		super(wave);
 
@@ -19,7 +19,9 @@ public class WaveFormationUnit extends Wave{
 		for(int i =0; i < units.length; i++) {
 			units[i] = new Enemy(new PVector((i%2==0?width/2+((i*8)%32)+4:width/2-((i*8)%32)-4), -((i*8)/32)*16 - ((i*8)/(128))*128), 
 				parts[(i*8)/(128)], 
-				this,unitHP);
+				this,
+				unitHP,
+				enemyShape);
 			partsId[(i*8)/(128)] = i;
 		}
 	}

@@ -3,6 +3,13 @@ public class Wave extends Gameobject{
 	Enemy[] units = new Enemy[0];
 	int wave;
 
+	PVector[] enemyShape = new PVector[] {
+		new PVector(-4,-4),
+		new PVector(0,6),
+		new PVector(4,-4),
+		new PVector(0,-2),
+	};
+
 	boolean cleenWave = true;
 
 	Wave(int wave) {
