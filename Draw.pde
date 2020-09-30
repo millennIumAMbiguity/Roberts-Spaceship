@@ -36,7 +36,14 @@ void draw(){
 
 		textAlign(CENTER);
 		textSize(20);
-		text(score, width/2, spacing*2);
+		if (scoreScoll < score){
+			scoreScoll += max(score-scoreScoll,0)/16f+0.1f;
+			if (scoreScoll > score)
+				scoreScoll = score;
+			text((int)scoreScoll, width/2, spacing*2);
+		} else {
+			text(score, width/2, spacing*2);
+		}
 
 		if(int(max(waveController.spawnNextWave -time,0)) > 0){
 		textAlign(CENTER);

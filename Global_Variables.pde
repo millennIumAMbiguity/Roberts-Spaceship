@@ -14,4 +14,5 @@ long time;
 float scrollSpeed = 0.5f;
 
 int score;
+float scoreScoll;
 int dist;
