@@ -107,7 +107,7 @@ public class Gameobject {
 			} else {
 				if (hp.sub(1)){
 					if (collisionLayer == 2){
-						score += 20;
+						score += hp.maxHP*5+fireDelay/400;
 					}
 					removeFromScene();
 				}
