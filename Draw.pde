@@ -31,7 +31,7 @@ void draw(){
 		dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
 		textAlign(LEFT);
 		text("Score: " + score, offsetFromSide, spacing);
-		text("Distance: " + dist + "m", offsetFromSide, spacing*2);
+		text("Distance: " + dist + " m", offsetFromSide, spacing*2);
 		text("Wave: " + waveController.waveCount, offsetFromSide, spacing*3);
 		text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*4);
 		if(int(max(waveController.spawnNextWave -time,0)) > 0){
@@ -43,7 +43,8 @@ void draw(){
 		textAlign(CENTER);
 		text("Game Over", width/2-spacing, height/2);
 		text("Final score: " + score, width/2, height/2 +30 );
-		text("Distance traveled: " + dist +"m", width/2+ spacing, height/2 +60);
+		float finalDistance = dist/1000;
+		text("Distance traveled: " + finalDistance +" km", width/2+ spacing, height/2 +60);
 	}
 
 	for (Star star : starsInScene) {
