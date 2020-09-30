@@ -44,7 +44,10 @@ public class Gameobject {
 	}
 
 	void draw() {
-		fill(objColor);
+		if (hp.imunity())
+			fill(objColor&0x4FFFFFFF);
+		else
+			fill(objColor);
 		ellipse(position.x, position.y, collisionSize, collisionSize);
 	}
 
