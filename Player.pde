@@ -1,7 +1,6 @@
 class Player extends Gameobject {
 
 	float playerSpeed = 8f;
-	int lineLimit = 10;
 
 
 	public Player(){
@@ -20,8 +19,6 @@ class Player extends Gameobject {
 		velocity.y = mouseY - position.y;
 		velocity.limit(playerSpeed);
 		position.add(velocity);
-		
-		line(position.x,position.y,mouseX,mouseY);
 	}
 
 	void action(){
@@ -46,6 +43,8 @@ class Player extends Gameobject {
 		  vertex( 4 + position.x,  4 + position.y);
 		  vertex(     position.x,  2 + position.y);
 		endShape(CLOSE);
+
+		line(position.x,position.y,mouseX,mouseY);
 	}
 
 	
