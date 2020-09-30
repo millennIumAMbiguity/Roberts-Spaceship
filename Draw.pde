@@ -58,7 +58,7 @@ void draw(){
 		text("Game Over", width/2, height/2 - (spacing *3));
 		textSize(15);
 		text("Final score: " + score, width/2, height/2);
-		float finalDistance = dist/1000;
+		float finalDistance = dist/1000f;
 		text("Distance traveled: " + finalDistance +" km", width/2, height/2 + (spacing*2));
 	}
 
