@@ -3,7 +3,7 @@ public class WaveFormationShooter extends Wave{
 	WaveFormationShooter(int wave) {
 		super(wave);
 
-		units = new Enemy[(int)sqrt(wave)*10+1];
+		units = new Enemy[(int)(sqrt(wave)*5)+1];
 
 		for(int i =0; i < units.length; i++) {
 			units[i] = new Enemy(new PVector(i%2==0?width/2+((i*16)%(width/2))+8:width/2-((i*16)%(width/2))-8, -((i*16)/(width/2))*32), 

@@ -7,7 +7,7 @@ public class WaveFormationUnit extends Wave{
 	WaveFormationUnit(int wave) {
 		super(wave);
 
-		units = new Enemy[(int)sqrt(wave)*10+1];
+		units = new Enemy[(int)(sqrt(wave)*5)+1];
 
 		parts = new PVector[(units.length*8)/(128)+1];
 		partsId = new int[parts.length];
