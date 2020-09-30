@@ -1,6 +1,9 @@
 ArrayList<Gameobject> scene = new ArrayList<Gameobject>();
 ArrayList<Gameobject> ghostScene = new ArrayList<Gameobject>();
+
+ArrayList<Star> starsInScene = new ArrayList<Star>();
 Backdrop backdrop = new Backdrop();
+
 
 Player player;
 

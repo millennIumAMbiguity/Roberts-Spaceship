@@ -8,5 +8,5 @@ void setup()
   player = new Player();
   waveController = new WaveController();
   ghostScene = new ArrayList<Gameobject>(scene);
-  backdrop.SetZones();
+  backdrop.setZones();
 }
