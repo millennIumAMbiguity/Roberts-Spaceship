@@ -13,6 +13,8 @@ public class Gameobject {
 	float collisionSize;
 	int id;
 	int objColor;
+	int objStrokeColor = 0xFFFFFFFF;
+
 
 	int collisionLayer;
 	/*
@@ -44,6 +46,7 @@ public class Gameobject {
 	}
 
 	void draw() {
+		stroke(objStrokeColor);
 		if (hp.imunity())
 			fill(objColor&0x4FFFFFFF);
 		else

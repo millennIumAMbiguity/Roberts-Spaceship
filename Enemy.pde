@@ -10,7 +10,8 @@ class Enemy extends Gameobject{
 		this.parent = parent;
 		this.hp = new Health(hp, 200);
 		collisionLayer = 2;
-		objColor = color(255,0,0);
+		objColor = 0xFFD4886A;
+		objStrokeColor = 0xFFAA5939;
 
 		bulletSpeed = new PVector(0,1);
 		fireDelay = 2000;

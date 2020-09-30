@@ -7,10 +7,12 @@ class Bullet extends Gameobject{
 		objColor = bulletColor;
 		collisionSize = 2;
 		hp = new Health(1, 0);
+		objColor = 0xFF718EA4;
 	}
 
 	void draw() {
-		stroke(objColor);
+		fill(objColor);
+		noStroke();
 		rect(position.x-0.5f, position.y-1, 1, 3);
 	}
 	

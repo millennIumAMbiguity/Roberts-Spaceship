@@ -8,7 +8,8 @@ class Player extends Gameobject {
 
 		hp = new Health(3, 1200);
 		collisionLayer = 0;
-		objColor = color(0,255,0);
+		objColor = 0xFF277554;
+		objStrokeColor = 0xFF499273;
 
 		fireDelay = 400;
 		bulletSpeed = new PVector(0,-1.5f);
@@ -30,6 +31,7 @@ class Player extends Gameobject {
 	}
 
 	void draw() {
+		stroke(objStrokeColor);
 		if (hp.imunity())
 			fill(objColor&0x4FFFFFFF);
 		else
