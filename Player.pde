@@ -25,7 +25,7 @@ class Player extends Gameobject {
 	void action(){
 		if (nextfire < time){
 			nextfire = time + fireDelay;
-			new Bullet(1,bulletSpeed,position.copy());
+			new Bullet(1,bulletSpeed,position.copy(), color(0,0,255));
 		}
 	}
 

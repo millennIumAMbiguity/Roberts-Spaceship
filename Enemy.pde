@@ -43,7 +43,7 @@ class Enemy extends Gameobject{
 			return;
 		if (nextfire < time){
 			nextfire = time + fireDelay;
-			new Bullet(2,bulletSpeed,position.copy());
+			new Bullet(2,bulletSpeed,position.copy(),color(255,0,0));
 		}
 	}
 

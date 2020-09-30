@@ -35,11 +35,16 @@ void draw(){
 		text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*4);
 		text("WaveDelay: " + (int)max(waveController.spawnNextWave - time,0)+ "ms" , offsetFromSide, spacing*5);
 
-	} else {
+	} 
+	else {
 		textAlign(CENTER);
 		text("Game Over", width/2, height/2);
 		text("Final score: " + score, width/2, height/2 +30 );
 		text("Distance traveled: " + dist +"m", width/2, height/2 +60);
+	}
+
+	for (Star star : starsInScene) {
+		star.move();
 	}
 
 	for (Gameobject obj : ghostScene) {
