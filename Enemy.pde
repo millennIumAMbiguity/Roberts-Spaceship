@@ -4,7 +4,10 @@ class Enemy extends Gameobject{
 
 	boolean exist = true;
 
-	Enemy(PVector pos, PVector vel, Wave parent, int hp){
+	PVector[] shapeCords;
+
+	Enemy(PVector pos, PVector vel, Wave parent, int hp, PVector[] shapeCords){
+		this.shapeCords = shapeCords;
 		position = pos;
 		velocity = vel;
 		this.parent = parent;
@@ -46,6 +49,22 @@ class Enemy extends Gameobject{
 			nextfire = time + fireDelay;
 			new Bullet(2,bulletSpeed,position.copy(),color(255,0,0));
 		}
+	}
+
+	void draw() {
+		stroke(objStrokeColor);
+		if (hp.imunity())
+			fill(objColor&0x4FFFFFFF);
+		else
+			fill(objColor);
+
+		//ellipse(position.x, position.y, collisionSize, collisionSize);
+
+		beginShape();
+		for (PVector vert : shapeCords) {
+			vertex(position.x + vert.x, position.y + vert.y);
+		}
+		endShape(CLOSE);
 	}
 
 
