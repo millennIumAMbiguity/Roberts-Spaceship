@@ -10,13 +10,13 @@ class Bullet extends Gameobject{
 		if (collisionLayer == 2)
 			objColor = 0xFFD4886A;
 		else
-			objColor = 0xFF718EA4;
+			objColor = 0xFF75AF96;
 	}
 
 	void draw() {
 		fill(objColor);
 		noStroke();
-		rect(position.x-1f, position.y-2, 2, 5);
+		ellipse(position.x, position.y, 3, 6);
 	}
 	
 }
