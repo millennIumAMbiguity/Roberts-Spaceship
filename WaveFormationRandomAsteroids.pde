@@ -1,6 +1,6 @@
 public class WaveFormationRandomAsteroids extends Wave{
 
-	int unitHP = 2;
+	int unitHP = 1;
 
 	WaveFormationRandomAsteroids(int wave) {
 		super(wave);
