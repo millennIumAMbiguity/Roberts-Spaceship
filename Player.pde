@@ -12,7 +12,7 @@ class Player extends Gameobject {
 		objStrokeColor = 0xFF499273;
 
 		fireDelay = 400;
-		bulletSpeed = new PVector(0,-3f);
+		bulletSpeed = new PVector(0,-2f);
 	}
 
 	void move(){
