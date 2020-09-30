@@ -37,7 +37,7 @@ void draw(){
 		textAlign(CENTER);
 		textSize(20);
 		if (scoreScoll < score){
-			scoreScoll += max(score-scoreScoll,0)/16f+0.1f;
+			scoreScoll += max(score-scoreScoll,0)/32f+0.001f;
 			if (scoreScoll > score)
 				scoreScoll = score;
 			text((int)scoreScoll, width/2, spacing*2);
