@@ -28,6 +28,7 @@ void draw(){
 
 		fill(0xFF718EA4);
 		dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
+		distScore = dist/500;
 		textAlign(LEFT);
 		textSize(12);
 		text("Distance: " + dist + " m", offsetFromSide, spacing);
@@ -40,9 +41,9 @@ void draw(){
 			scoreScoll += max(score-scoreScoll,0)/32f+0.0075f;
 			if (scoreScoll > score)
 				scoreScoll = score;
-			text((int)scoreScoll, width/2, spacing*2);
+			text((int)scoreScoll+distScore, width/2, spacing*2);
 		} else {
-			text(score, width/2, spacing*2);
+			text(score+distScore, width/2, spacing*2);
 		}
 
 		if(int(max(waveController.spawnNextWave -time,0)) > 0){

@@ -25,6 +25,7 @@ class Player extends Gameobject {
 		if (nextfire < time){
 			nextfire = time + fireDelay;
 			new Bullet(1,bulletSpeed,position.copy(), color(0,0,255));
+			stats.shootsFired++;
 		}
 	}
 

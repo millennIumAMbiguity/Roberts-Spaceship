@@ -13,6 +13,9 @@ long time;
 
 float scrollSpeed = 0.5f;
 
+Stats stats = new Stats();
+
 int score;
 float scoreScoll;
+int distScore;
 int dist;

@@ -111,6 +111,10 @@ public class Gameobject {
 				if (hp.sub(1)){
 					if (collisionLayer == 2){
 						score += hp.maxHP*5+fireDelay/400;
+						if (this.getClass().getName() == "Yrgo_Shooter_Project$Enemy"){
+							println("kills: "+ stats.kills);
+							stats.kills++;
+						}
 					}
 					removeFromScene();
 				}

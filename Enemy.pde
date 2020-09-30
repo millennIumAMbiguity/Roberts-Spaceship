@@ -19,6 +19,8 @@ class Enemy extends Gameobject{
 		bulletSpeed = new PVector(0,1);
 		fireDelay = 2000;
 		nextfire = time + (id&31)*100;
+
+		stats.enemiesSeen++;
 	}
 
 

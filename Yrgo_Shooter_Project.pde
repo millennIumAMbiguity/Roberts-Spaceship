@@ -1,4 +1,4 @@
 void settings() {
-	size(1000,480);
+	size(1000,600);
 	//fullScreen();
 }
