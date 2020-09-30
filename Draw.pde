@@ -4,7 +4,7 @@ int spacing = 15;
 void draw(){
 
 	time = millis();
-	background(0);
+	background(0x042037);
 
 
 

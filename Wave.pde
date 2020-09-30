@@ -14,7 +14,6 @@ public class Wave extends Gameobject{
 	}
 
 	void draw() {
-		stroke(objColor);
 		line(position.x - collisionSize, position.y, position.x + collisionSize, position.y);
 		line(position.x, position.y - collisionSize, position.x, position.y+ collisionSize);
 	}
