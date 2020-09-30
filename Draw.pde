@@ -43,10 +43,10 @@ void draw(){
 	} 
 	else {
 		textAlign(CENTER);
-		text("Game Over", width/2-spacing, height/2);
-		text("Final score: " + score, width/2, height/2 +30 );
+		text("Game Over", width/2, height/2);
+		text("Final score: " + score, width/2, height/2 + spacing );
 		float finalDistance = dist/1000;
-		text("Distance traveled: " + finalDistance +" km", width/2+ spacing, height/2 +60);
+		text("Distance traveled: " + finalDistance +" km", width/2, height/2 + (spacing*2));
 	}
 
 	for (Star star : starsInScene) {
