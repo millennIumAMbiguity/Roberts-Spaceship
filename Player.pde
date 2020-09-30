@@ -3,7 +3,6 @@ class Player extends Gameobject {
 	float playerSpeed = 8f;
 
 
-
 	public Player(){
 
 		hp = new Health(3, 1200);
@@ -18,7 +17,6 @@ class Player extends Gameobject {
 	void move(){
 		velocity.x = mouseX - position.x;
 		velocity.y = mouseY - position.y;
-
 		velocity.limit(playerSpeed);
 		position.add(velocity);
 	}
@@ -45,6 +43,8 @@ class Player extends Gameobject {
 		  vertex( 4 + position.x,  4 + position.y);
 		  vertex(     position.x,  2 + position.y);
 		endShape(CLOSE);
+
+		line(position.x,position.y,mouseX,mouseY);
 	}
 
 	
