@@ -29,5 +29,21 @@ class Player extends Gameobject {
 		}
 	}
 
+	void draw() {
+		if (hp.imunity())
+			fill(objColor&0x4FFFFFFF);
+		else
+			fill(objColor);
+
+		//ellipse(position.x, position.y, collisionSize, collisionSize);
+
+		beginShape();
+		  vertex(-4 + position.x,  4 + position.y);
+		  vertex(     position.x,  -6 + position.y);
+		  vertex( 4 + position.x,  4 + position.y);
+		  vertex(     position.x,  2 + position.y);
+		endShape(CLOSE);
+	}
+
 	
 }
