@@ -4,6 +4,8 @@ ArrayList<Gameobject> ghostScene = new ArrayList<Gameobject>();
 ArrayList<Star> starsInScene = new ArrayList<Star>();
 Backdrop backdrop = new Backdrop();
 
+DistanceConverter distConverter = new DistanceConverter();
+
 
 Player player;
 

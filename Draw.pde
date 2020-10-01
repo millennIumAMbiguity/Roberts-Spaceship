@@ -31,7 +31,8 @@ void draw(){
 		distScore = dist/500;
 		textAlign(LEFT);
 		textSize(12);
-		text("Distance: " + dist + " m", offsetFromSide, spacing);
+		
+		text(distConverter.convertDistance(), offsetFromSide,spacing);
 		text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*2);
 		text("Wave: " + waveController.waveCount, offsetFromSide, spacing*3);
 
@@ -60,7 +61,7 @@ void draw(){
 		textSize(15);
 		text("Final score: " + score, width/2, height/2);
 		float finalDistance = dist/1000f;
-		text("Distance traveled: " + finalDistance +" km", width/2, height/2 + (spacing*2));
+		text(distConverter.convertDistance(), width/2, height/2 + (spacing*2));
 	}
 
 	for (Star star : starsInScene) {

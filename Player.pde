@@ -1,6 +1,7 @@
 class Player extends Gameobject {
 
 	float playerSpeed = 8f;
+	int guideMin = 100;
 
 
 	public Player(){
@@ -45,8 +46,14 @@ class Player extends Gameobject {
 		  vertex(     position.x,  2 + position.y);
 		endShape(CLOSE);
 
-		line(position.x,position.y,mouseX,mouseY);
+		drawGuideLine();
 	}
 
+	void drawGuideLine()
+	{
+		if(position.x - mouseX > guideMin || mouseX - position.x > guideMin ||
+			position.y - mouseY > guideMin || mouseY - position.y > guideMin)
+			line(position.x,position.y,mouseX,mouseY);	
+	}
 	
 }
