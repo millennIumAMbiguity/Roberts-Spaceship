@@ -128,7 +128,7 @@ public class Gameobject {
 							stats.kills++;
 						//}
 					} 
-					hitDamage.play();
+					hitDamage.play(1,0,0.1);
 					removeFromScene();
 				}
 			}
