@@ -3,6 +3,8 @@ class Player extends Gameobject {
 	float playerSpeed = 8f;
 	int guideMin = 100;
 
+	PVector bulletPos;
+
 
 	public Player(){
 
@@ -33,17 +35,35 @@ class Player extends Gameobject {
 		
 		switch (stats.powerUps) {
 		case 0:
+			setBulletPos(0,-5);
+			setBulletSpeed(0,-2);
 			new Bullet(1,bulletSpeed,position.copy());
 			stats.shootsFired++;
 			break;
 		case 1:
-			PVector bullet1Pos = new PVector(position.x + 3,position.y -5);
-			new Bullet(1,bulletSpeed,bullet1Pos.copy());
-			PVector bullet2Pos = new PVector(position.x - 3,position.y -5);
-			new Bullet(1,bulletSpeed,bullet2Pos.copy());
+			setBulletPos(3,-5);
+			setBulletSpeed(0,-2);
+			bulletPos = new PVector(position.x + 3,position.y -5);
+			new Bullet(1,bulletSpeed,bulletPos.copy());
+			setBulletPos(-3,-5);
+			setBulletSpeed(0,-2);
+			bulletPos = new PVector(position.x - 3,position.y -5);
+			new Bullet(1,bulletSpeed,bulletPos.copy());
 			stats.shootsFired += 2;
 			break;
 		case 2:
+			setBulletPos(0,-5);
+			setBulletSpeed(0,-2);
+			new Bullet(1,bulletSpeed,bulletPos.copy());
+			setBulletPos(-3,-5);
+			setBulletSpeed(-0.2f,-2);
+			new Bullet(1,bulletSpeed,bulletPos.copy());
+			setBulletPos(3,-5);
+			setBulletSpeed(0.2f,-2);
+			new Bullet(1,bulletSpeed,bulletPos.copy());
+			setBulletPos(0,-5);
+			setBulletSpeed(0,-2);
+			stats.shootsFired += 3;
 			break;
 		case 3:
 			break;
@@ -62,6 +82,15 @@ class Player extends Gameobject {
 		case 10:
 			break;
 		}
+	}
+
+	void setBulletPos(float xOffset, float yOffset)
+	{
+		bulletPos = new PVector(position.x + xOffset, position.y + yOffset);
+	}
+	void setBulletSpeed(float xSpeed, float ySpeed)
+	{
+		bulletSpeed = new PVector(xSpeed,ySpeed);
 	}
 
 	void draw() {
