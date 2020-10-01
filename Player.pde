@@ -33,9 +33,15 @@ class Player extends Gameobject {
 		
 		switch (stats.powerUps) {
 		case 0:
-			new Bullet(1,bulletSpeed,position.copy(), color(0,0,255));
+			new Bullet(1,bulletSpeed,position.copy());
+			stats.shootsFired++;
 			break;
 		case 1:
+			PVector bullet1Pos = new PVector(position.x + 3,position.y -5);
+			new Bullet(1,bulletSpeed,bullet1Pos.copy());
+			PVector bullet2Pos = new PVector(position.x - 3,position.y -5);
+			new Bullet(1,bulletSpeed,bullet2Pos.copy());
+			stats.shootsFired += 2;
 			break;
 		case 2:
 			break;
@@ -56,7 +62,6 @@ class Player extends Gameobject {
 		case 10:
 			break;
 		}
-		stats.shootsFired++;
 	}
 
 	void draw() {
