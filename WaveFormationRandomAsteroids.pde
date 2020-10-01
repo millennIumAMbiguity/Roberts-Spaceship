@@ -1,7 +1,5 @@
 public class WaveFormationRandomAsteroids extends Wave{
 
-	int unitHP = 1;
-
 	PVector[] enemyShape = new PVector[] {
 		new PVector(-8,0),
 		new PVector(-6,-6),
@@ -31,7 +29,7 @@ public class WaveFormationRandomAsteroids extends Wave{
 			units[i] = new Enemy(new PVector(random(0, width), random(-height-(int)(sqrtwave*2), 0)), 
 				velocity, //changing this wave velocity will change the velocity of all child "Enemy"s 
 				this,
-				unitHP,
+				5,
 				newEnemyShape);
 			
 			units[i].collisionSize = 16;

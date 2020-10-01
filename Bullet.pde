@@ -7,7 +7,7 @@ class Bullet extends Gameobject{
 		objColor = bulletColor;
 		collisionSize = 2;
 		hp = new Health(1, 0);
-		if (collisionLayer == 2)
+		if (collisionLayer > 1)
 			objColor = 0xFFD4886A;
 		else
 			objColor = 0xFF75AF96;
@@ -17,6 +17,17 @@ class Bullet extends Gameobject{
 		fill(objColor);
 		noStroke();
 		ellipse(position.x, position.y, 3, 6);
+	}
+
+	void outOfBounds(){
+		if (collisionLayer != 0)
+			if (position.x < -collisionSize || position.x > width +collisionSize ||
+				position.y < -collisionSize || position.y > height+collisionSize)
+			{
+				if (collisionLayer == 1)
+				stats.shootsMis++;
+				removeFromScene();
+			}
 	}
 	
 }
