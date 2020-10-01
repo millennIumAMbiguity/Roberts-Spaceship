@@ -81,9 +81,9 @@ void draw(){
 		textAlign(LEFT);
 		text(distConverter.convertDistance(), width/2, height/2 + (spacing*2));
 		text(stats.kills, width/2, height/2 + (spacing*3));
-		text((float)stats.kills / stats.enemiesSeen * 100 + "%", width/2, height/2 + (spacing*4));
+		text(nf((float)stats.kills / stats.enemiesSeen * 100,0,2) + "%", width/2, height/2 + (spacing*4));
 		text(stats.shootsFired, width/2, height/2 + (spacing*5));
-		text((float)stats.shootsMis / stats.shootsFired * 100 + "%", width/2, height/2 + (spacing*6));
+		text(nf((float)stats.shootsMis / stats.shootsFired * 100,0,2) + "%", width/2, height/2 + (spacing*6));
 
 	}
 

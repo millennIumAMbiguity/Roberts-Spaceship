@@ -7,7 +7,7 @@ class Bullet extends Gameobject{
 		objColor = bulletColor;
 		collisionSize = 2;
 		hp = new Health(1, 0);
-		if (collisionLayer == 2)
+		if (collisionLayer > 1)
 			objColor = 0xFFD4886A;
 		else
 			objColor = 0xFF75AF96;

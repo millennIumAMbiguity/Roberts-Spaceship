@@ -18,9 +18,11 @@ public class Gameobject {
 
 	int collisionLayer;
 	/*
-	0: player;
-	1: player bullets;
-	2: enemys and enemys bullets;
+	-1: powerup
+	 0: player;
+	 1: player bullets;
+	 2: enemys;
+	 3: enemy bullets
 	*/
 
 	Gameobject() {
@@ -92,6 +94,14 @@ public class Gameobject {
 
 		//dont collide player with playerbullets
 		if (collisionLayer < 2 && obj.collisionLayer < 2)
+			return false;
+
+		//dont colide with enemys and enmys bullets
+		if (collisionLayer > 1 && obj.collisionLayer > 1)
+			return false;
+
+		//bullets dont colide with bullets
+		if (collisionLayer == 3 && obj.collisionLayer == 1 || collisionLayer == 1 && obj.collisionLayer == 3)
 			return false;
 
 		float collisionDist = (collisionSize + obj.collisionSize)/2f;
