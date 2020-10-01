@@ -18,5 +18,16 @@ class Bullet extends Gameobject{
 		noStroke();
 		ellipse(position.x, position.y, 3, 6);
 	}
+
+	void outOfBounds(){
+		if (collisionLayer != 0)
+			if (position.x < -collisionSize || position.x > width +collisionSize ||
+				position.y < -collisionSize || position.y > height+collisionSize)
+			{
+				if (collisionLayer == 1)
+				stats.shootsMis++;
+				removeFromScene();
+			}
+	}
 	
 }
