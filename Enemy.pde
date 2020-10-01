@@ -50,7 +50,7 @@ class Enemy extends Gameobject{
 		if (nextfire < time){
 			laserShoot.play(0.5,0,0.05);
 			nextfire = time + fireDelay;
-			new Bullet(3,bulletSpeed,position.copy(),color(255,0,0));
+			new Bullet(3,bulletSpeed,position.copy());
 		}
 	}
 
