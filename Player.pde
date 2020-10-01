@@ -25,9 +25,38 @@ class Player extends Gameobject {
 	void action(){
 		if (nextfire < time){
 			nextfire = time + fireDelay;
-			new Bullet(1,bulletSpeed,position.copy(), color(0,0,255));
-			stats.shootsFired++;
+			shootBullets();
 		}
+	}
+
+	void shootBullets(){
+		
+		switch (stats.powerUps) {
+		case 0:
+			new Bullet(1,bulletSpeed,position.copy(), color(0,0,255));
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
+			break;
+		case 9:
+			break;
+		case 10:
+			break;
+		}
+		stats.shootsFired++;
 	}
 
 	void draw() {
