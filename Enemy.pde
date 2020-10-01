@@ -35,12 +35,15 @@ class Enemy extends Gameobject{
 	}
 
 	void removeFromScene() {
-		exist = false;
-		scene.remove(id);
-		waveController.removeEnemy(parent.wave);
-		int sceneSize = scene.size();
-		for (int i = id; i < sceneSize; ++i) {
-			scene.get(i).id--;
+		if (!removed){
+			removed = true;
+			exist = false;
+			scene.remove(id);
+			waveController.removeEnemy(parent.wave);
+			int sceneSize = scene.size();
+			for (int i = id; i < sceneSize; ++i) {
+				scene.get(i).id--;
+			}
 		}
 	}
 
@@ -48,7 +51,7 @@ class Enemy extends Gameobject{
 		if(position.y < 0)
 			return;
 		if (nextfire < time){
-			laserShoot.play(0.5,0,0.05);
+			//laserShoot.play(0.5,0,0.05);
 			nextfire = time + fireDelay;
 			new Bullet(3,bulletSpeed,position.copy());
 		}

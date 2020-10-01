@@ -8,14 +8,14 @@ void setup()
   textFont(font);
   textSize(8);
 
-  explosion   = new SoundFile(this, "sounds\\Explosion.wav");
-  hitDamage   = new SoundFile(this, "sounds\\Hit_Damage.wav");
-  hitHurt     = new SoundFile(this, "sounds\\Hit_Hurt.wav");
-  laserShoot  = new SoundFile(this, "sounds\\Laser_Shoot.wav");
-  powerup     = new SoundFile(this, "sounds\\Powerup.wav");
+  explosion   = new SoundFile(this, "Explosion.wav");
+  hitDamage   = new SoundFile(this, "Hit_Damage.wav");
+  hitHurt     = new SoundFile(this, "Hit_Hurt.wav");
+  laserShoot  = new SoundFile(this, "Laser_Shoot.wav");
+  powerup     = new SoundFile(this, "Powerup.wav");
 
-  music       = new SoundFile(this, "sounds\\CORE - Power ISO - dead feelings.wav");
-  music.play();
+  music       = new SoundFile(this, "CORE - Power ISO - dead feelings.wav");
+  music.loop();
 
   time = millis();
 

@@ -2,6 +2,29 @@ public class WaveFormationShooter extends Wave{
 
 	int unitHP = 2;
 
+	PVector[] enemyShape = new PVector[] {
+		new PVector(0,-6),
+		new PVector(-3,-5),
+		new PVector(-5,0),
+		new PVector(-6,1.5),
+		new PVector(-4,3),
+		new PVector(-6,4),
+		new PVector(-4,5),
+		new PVector(-5,4),
+		new PVector(-2,2),
+		new PVector(-1,3),
+
+		new PVector(1,3),
+		new PVector(2,2),
+		new PVector(5,4),
+		new PVector(4,5),
+		new PVector(6,4),
+		new PVector(4,3),
+		new PVector(6,1.5),
+		new PVector(5,0),
+		new PVector(3,-5)
+	};
+
 	WaveFormationShooter(int wave) {
 		super(wave);
 

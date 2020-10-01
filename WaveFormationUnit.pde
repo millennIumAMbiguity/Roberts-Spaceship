@@ -3,6 +3,29 @@ public class WaveFormationUnit extends Wave{
 	int unitHP = 2;
 	PVector[] parts;
 	int[] partsId;
+
+	PVector[] enemyShape = new PVector[] {
+		new PVector(0,-6),
+		new PVector(-2,-5),
+		new PVector(-5,0),
+		new PVector(-6,1.5),
+		new PVector(-4,3),
+		new PVector(-4,4),
+		new PVector(-4,5),
+		new PVector(-3,4),
+		new PVector(-2,2),
+		new PVector(-1,3),
+
+		new PVector(1,3),
+		new PVector(2,2),
+		new PVector(3,4),
+		new PVector(4,5),
+		new PVector(4,4),
+		new PVector(4,3),
+		new PVector(6,1.5),
+		new PVector(5,0),
+		new PVector(2,-5)
+	};
 	
 	WaveFormationUnit(int wave) {
 		super(wave);

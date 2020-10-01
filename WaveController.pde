@@ -27,14 +27,14 @@ public class WaveController {
 			wave1Amount--;
 			if (wave1Amount < 1){
 				if (spawnNextWave < time)
-					spawnNextWave = time + spawnDelay;
+					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
 			}
 		} else {
 			wave2Amount--;
 			if (wave2Amount < 1){
 				if (spawnNextWave < time)
-					spawnNextWave = time + spawnDelay;
+					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
 			}
 		}
@@ -47,14 +47,14 @@ public class WaveController {
 			wave1 = newWave(waveCount);
 			wave1Amount = wave1.units.length;
 			if (wave2 == null)
-				spawnNextWave = time + spawnDelay;
+				spawnNextWave = time + spawnDelay-1;
 		} else if (wave2 == null){
 			wave2 = newWave(waveCount+1);
 			wave2Amount = wave2.units.length;
 		} else {
 
 			if (wave1Amount < 1 && wave2Amount < 1){
-				spawnNextWave = time + spawnDelay;
+				spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
 			}
 

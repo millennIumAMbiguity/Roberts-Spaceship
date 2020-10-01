@@ -39,11 +39,15 @@ public class Gameobject {
 		scene.add(this);
 	}
 
+	boolean removed = false;
 	void removeFromScene() {
-		scene.remove(id);
-		int sceneSize = scene.size();
-		for (int i = id; i < sceneSize; ++i) {
-			scene.get(i).id--;
+		if (!removed){
+			removed = true;
+			scene.remove(id);
+			int sceneSize = scene.size();
+			for (int i = id; i < sceneSize; ++i) {
+				scene.get(i).id--;
+			}
 		}
 	}
 
