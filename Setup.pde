@@ -14,6 +14,8 @@ void setup()
   laserShoot  = new SoundFile(this, "sounds\\Laser_Shoot.wav");
   powerup     = new SoundFile(this, "sounds\\Powerup.wav");
 
+  music       = new SoundFile(this, "sounds\\CORE - Power ISO - dead feelings.wav");
+  music.play();
 
   time = millis();
 

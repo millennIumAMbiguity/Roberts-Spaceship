@@ -22,6 +22,8 @@ float scoreScoll;
 int distScore;
 int dist;
 
+boolean titleScreen = true;
+
 
 //sounds
-SoundFile explosion, hitDamage, hitHurt, laserShoot, powerup;
+SoundFile explosion, hitDamage, hitHurt, laserShoot, powerup, music;
