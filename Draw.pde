@@ -12,9 +12,13 @@ void draw(){
 		for (Star star : starsInScene) {
 			star.move();
 		}
+
+
 		fill(color(0,0,0,min(max(5-time/2000f,0.01),1)*255));
 		rect(-1, 0, width+1, height);
 
+		fill(color(113,147,164,max(time/2000f-9,0)*255));
+		gameUI();
 
 		textAlign(CENTER);
 		textSize(32);
@@ -32,8 +36,10 @@ void draw(){
 		textSize(16);
 		text("Adventures in Another Solar System", width/2, height/2 + 32);
 
-		if (time > 20000)
+		if (time > 21000){
+			waveController.spawnNextWave = 25000;
 			titleScreen = false;
+		}
 
 
 	} else {
@@ -68,32 +74,8 @@ void draw(){
 			waveController.update();
 
 			fill(0xFF718EA4);
-			dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
-			distScore = dist/500;
-			textAlign(LEFT);
-			textSize(12);
+			gameUI();
 			
-			text("Distance: "+distConverter.convertDistance(), offsetFromSide,spacing);
-			text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*2);
-			text("Wave: " + waveController.waveCount, offsetFromSide, spacing*3);
-
-			textAlign(CENTER);
-			textSize(20);
-			if (scoreScoll < score){
-				scoreScoll += max(score-scoreScoll,0)/32f+0.0075f;
-				if (scoreScoll > score)
-					scoreScoll = score;
-				text((int)scoreScoll+distScore, width/2, spacing*2);
-			} else {
-				text(score+distScore, width/2, spacing*2);
-			}
-
-			if(int(max(waveController.spawnNextWave -time,0)) > 0){
-				textAlign(CENTER);
-				textSize(14);
-				if (waveController.willSpawn)
-				text("Next wave in " + (int)max(waveController.spawnNextWave - time,0)/1000+ "s" , width/2, spacing*5);
-			}
 		} else {
 			fill(0xFFFFFFFF);
 			textAlign(CENTER);
@@ -115,12 +97,41 @@ void draw(){
 			text(stats.kills, width/2, height/2 + (spacing*3));
 			text(nf((float)stats.kills / stats.enemiesSeen * 100,0,2) + "%", width/2, height/2 + (spacing*4));
 			text(stats.shootsFired, width/2, height/2 + (spacing*5));
-			text(nf((float)stats.shootsMis / stats.shootsFired * 100,0,2) + "%", width/2, height/2 + (spacing*6));
+			text(nf((float)(stats.shootsMis-stats.shootsFired) / stats.shootsFired * 100,0,2) + "%", width/2, height/2 + (spacing*6));
 
 		}
 
 		//add new scene objects to scene
 		ghostScene = new ArrayList<Gameobject>(scene);
 	}
+}
 
+
+void gameUI(){
+	dist = height + (int)(time/30) - (int)ghostScene.get(0).position.y;
+	distScore = dist/500;
+	textAlign(LEFT);
+	textSize(12);
+	
+	text("Distance: "+distConverter.convertDistance(), offsetFromSide,spacing);
+	text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*2);
+	text("Wave: " + waveController.waveCount, offsetFromSide, spacing*3);
+
+	textAlign(CENTER);
+	textSize(20);
+	if (scoreScoll < score){
+		scoreScoll += max(score-scoreScoll,0)/32f+0.0075f;
+		if (scoreScoll > score)
+			scoreScoll = score;
+		text((int)scoreScoll+distScore, width/2, spacing*2);
+	} else {
+		text(score+distScore, width/2, spacing*2);
+	}
+
+	if(int(max(waveController.spawnNextWave -time,0)) > 0){
+		textAlign(CENTER);
+		textSize(14);
+		if (waveController.willSpawn)
+		text("Next wave in " + (int)max(waveController.spawnNextWave - time,0)/1000+ "s" , width/2, spacing*5);
+	}
 }

@@ -13,7 +13,7 @@ public class WaveController {
 	boolean willSpawn;
 
 	WaveController() {
-		spawnWave();
+		//spawnWave();
 	}
 
 	void update(){

@@ -127,8 +127,8 @@ public class Gameobject {
 						//if (this.getClass().getName() == "Yrgo_Shooter_Project$Enemy"){
 							stats.kills++;
 						//}
+						hitDamage.play(1,0,0.2);
 					} 
-					hitDamage.play(1,0,0.1);
 					removeFromScene();
 				}
 			}

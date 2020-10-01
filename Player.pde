@@ -26,6 +26,7 @@ class Player extends Gameobject {
 
 	void action(){
 		if (nextfire < time){
+			//laserShoot.play(1,0,0.05);
 			nextfire = time + fireDelay;
 			shootBullets();
 		}
