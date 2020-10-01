@@ -7,10 +7,10 @@ public class DistanceConverter{
 	int mileLimit = 10;
 
 	String convertDistance(){
-		if(dist/km > kmLimit)
-			return "Distance: " + nf(dist/km,0,2) + " km";
-		else if(dist/mile > mileLimit)
+		if(dist/mile > mileLimit)
 			return "Distance: " + nf(dist/mile,0,2) + " miles";
+		else if(dist/km > kmLimit)
+			return "Distance: " + nf(dist/km,0,2) + " km";
 		else
 			return "Distance: " + dist + " m";
 	}
