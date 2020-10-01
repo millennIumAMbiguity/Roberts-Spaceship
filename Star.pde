@@ -4,27 +4,51 @@ public class Star{
 	PVector position;
 	PVector velocity;
 
-	PVector size;
+	float starSize;
 
 	Star(PVector spawnZone){
 		this.spawnZone = spawnZone;
-		velocity = new PVector(0,random(1,5));
 		position = new PVector(random(spawnZone.x,spawnZone.y),random(-200,height -(height/10)));
-		size = new PVector(random(1,2),random(1,3));
+		setSize();
+		setVelocity();
 		starsInScene.add(this);
+	}
+
+	void setSize(){
+		switch ((int)random(1,4)) {
+			case 1:
+			starSize = 1f;
+			break;
+			case 2:
+			starSize = 1.5f;
+			break;
+			case 3:
+			starSize = 2;
+			break;
+		}
+	}
+
+	void setVelocity(){
+		if(starSize == 1f)
+			velocity = new PVector(0,1);
+		else if(starSize == 1.5f)
+			velocity = new PVector(0,2);
+		else
+			velocity = new PVector(0,3);
 	}
 
 	void move(){
 		position.add(velocity);
-		stroke(150,150,150);
-		ellipse(position.x,position.y,1,2);
+		stroke(255,255,255,200);
+		fill(255,255,255);
+		ellipse(position.x,position.y,starSize,starSize);
 		if(position.y > height)
 		{
 			// make changes to the x position and also vary the speed.
 			position.y = -200;
 			position.x = random(spawnZone.x,spawnZone.y);
-			velocity = new PVector(0,random(1, 5));
-			size = new PVector(random(1,2),random(1,3));
+			setSize();
+			setVelocity();
 		}
 
 	}

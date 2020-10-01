@@ -10,8 +10,7 @@ public class Backdrop{
 		spawnStars();
 	}
 
-	void spawnStars()
-	{
+	void spawnStars(){
 		stars = new Star[(width/10)];
 		for (int i = 0; i < zones.length; ++i) {
 			for (int j = 0; j < stars.length/10; ++j) {
