@@ -26,7 +26,6 @@ class Player extends Gameobject {
 
 	void action(){
 		if (nextfire < time){
-			laserShoot.play(1,0,0.01);
 			nextfire = time + fireDelay;
 			shootBullets();
 		}
@@ -38,30 +37,30 @@ class Player extends Gameobject {
 		case 0:
 			setBulletPos(0,-5);
 			setBulletSpeed(0,-2);
-			new Bullet(1,bulletSpeed,position.copy());
+			new Bullet(1,bulletSpeed,position);
 			stats.shootsFired++;
 			break;
 		case 1:
 			setBulletPos(3,-5);
 			setBulletSpeed(0,-2);
 			bulletPos = new PVector(position.x + 3,position.y -5);
-			new Bullet(1,bulletSpeed,bulletPos.copy());
+			new Bullet(1,bulletSpeed,bulletPos);
 			setBulletPos(-3,-5);
 			setBulletSpeed(0,-2);
 			bulletPos = new PVector(position.x - 3,position.y -5);
-			new Bullet(1,bulletSpeed,bulletPos.copy());
+			new Bullet(1,bulletSpeed,bulletPos);
 			stats.shootsFired += 2;
 			break;
 		case 2:
 			setBulletPos(0,-5);
 			setBulletSpeed(0,-2);
-			new Bullet(1,bulletSpeed,bulletPos.copy());
+			new Bullet(1,bulletSpeed,bulletPos);
 			setBulletPos(-3,-5);
 			setBulletSpeed(-0.2f,-2);
-			new Bullet(1,bulletSpeed,bulletPos.copy());
+			new Bullet(1,bulletSpeed,bulletPos);
 			setBulletPos(3,-5);
 			setBulletSpeed(0.2f,-2);
-			new Bullet(1,bulletSpeed,bulletPos.copy());
+			new Bullet(1,bulletSpeed,bulletPos);
 			setBulletPos(0,-5);
 			setBulletSpeed(0,-2);
 			stats.shootsFired += 3;
@@ -85,12 +84,10 @@ class Player extends Gameobject {
 		}
 	}
 
-	void setBulletPos(float xOffset, float yOffset)
-	{
+	void setBulletPos(float xOffset, float yOffset){
 		bulletPos = new PVector(position.x + xOffset, position.y + yOffset);
 	}
-	void setBulletSpeed(float xSpeed, float ySpeed)
-	{
+	void setBulletSpeed(float xSpeed, float ySpeed){
 		bulletSpeed = new PVector(xSpeed,ySpeed);
 	}
 
@@ -113,8 +110,7 @@ class Player extends Gameobject {
 		drawGuideLine();
 	}
 
-	void drawGuideLine()
-	{
+	void drawGuideLine(){
 		if(position.x - mouseX > guideMin || mouseX - position.x > guideMin ||
 			position.y - mouseY > guideMin || mouseY - position.y > guideMin)
 			line(position.x,position.y,mouseX,mouseY);	
