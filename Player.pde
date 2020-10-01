@@ -24,6 +24,7 @@ class Player extends Gameobject {
 
 	void action(){
 		if (nextfire < time){
+			laserShoot.play(1,0,0.01);
 			nextfire = time + fireDelay;
 			new Bullet(1,bulletSpeed,position.copy(), color(0,0,255));
 			stats.shootsFired++;

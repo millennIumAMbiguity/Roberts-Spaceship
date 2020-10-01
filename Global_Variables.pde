@@ -21,3 +21,7 @@ int score;
 float scoreScoll;
 int distScore;
 int dist;
+
+
+//sounds
+SoundFile explosion, hitDamage, hitHurt, laserShoot, powerup;

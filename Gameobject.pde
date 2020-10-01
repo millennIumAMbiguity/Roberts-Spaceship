@@ -114,17 +114,21 @@ public class Gameobject {
 		if ( position.dist(obj.position) < collisionDist) {
 			if (collisionLayer == 0){
 				if (hp.sub(1)){
+					explosion.play();
 					gameover = true;
 					removeFromScene();
+				} else {
+					hitHurt.play();
 				}
 			} else {
 				if (hp.sub(1)){
 					if (collisionLayer == 2){
 						score += hp.maxHP*5+fireDelay/400;
-						if (this.getClass().getName() == "Yrgo_Shooter_Project$Enemy"){
+						//if (this.getClass().getName() == "Yrgo_Shooter_Project$Enemy"){
 							stats.kills++;
-						}
-					}
+						//}
+					} 
+					hitDamage.play();
 					removeFromScene();
 				}
 			}
