@@ -25,6 +25,9 @@ public class WaveController
 		}
 	}
 
+
+	int cleenWaveWipePoints = 100;
+	//spawnes new wave when all enemys in a wave is dead or have despaned
 	void removeEnemy(int waveId) {
 		if (waveId == waveCount) {
 			wave1Amount--;
@@ -32,6 +35,8 @@ public class WaveController
 				if (spawnNextWave < time)
 					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
+				if(wave1.cleenWave)
+					score += cleenWaveWipePoints;
 			}
 		} 
 		else {
@@ -40,6 +45,8 @@ public class WaveController
 				if (spawnNextWave < time)
 					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
+				if(wave1.cleenWave)
+					score += cleenWaveWipePoints;
 			}
 		}
 	}
@@ -53,13 +60,13 @@ public class WaveController
 		stats.wave++;
 		
 		if (wave1 == null){
-			wave1 = newWave(waveCount);
+			wave1 = getNewWave(waveCount);
 			wave1Amount = wave1.units.length;
 			if (wave2 == null)
 				spawnNextWave = time + spawnDelay-1;
 		} 
 		else if (wave2 == null){
-			wave2 = newWave(waveCount+1);
+			wave2 = getNewWave(waveCount+1);
 			wave2Amount = wave2.units.length;
 		} else {
 
@@ -72,7 +79,7 @@ public class WaveController
 			wave1Amount = wave2Amount;
 			wave1 = wave2;
 
-			wave2 = newWave(waveCount+1);
+			wave2 = getNewWave(waveCount+1);
 			wave2Amount = wave2.units.length;
 		}
 	}
@@ -85,7 +92,7 @@ public class WaveController
 	}
 
 	boolean lastWaveWasAstriods = true;
-	Wave newWave(int waveId){
+	Wave getNewWave(int waveId){
 
 		switch ((int)random(0, 3)) {
 			case 0 :
@@ -101,7 +108,7 @@ public class WaveController
 			lastWaveWasAstriods = true;
 			return new WaveFormationRandomAsteroids(waveId);
 		} else {
-			return newWave(waveId);
+			return getNewWave(waveId);
 		}
 	}
 

@@ -20,7 +20,7 @@ void intro() {
 
 		//game ui
 		fill(color(113,147,164,max(time/2000f-11,0)*255));
-		gameUI();
+		drawGameUI();
 
 		fill(color(255,255,255,max(time/1000f-6,0)*255*max(10-(time/1000f),0)));
 		text("Nicklas Hidesjö", width/2, height/2 -32);
