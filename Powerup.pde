@@ -12,7 +12,17 @@ class Powerup extends Gameobject
     void draw() {
 		stroke(objStrokeColor);
 		fill(objColor);
-		ellipse(position.x, position.y, collisionSize, collisionSize);
+
+		beginShape();
+		vertex(position.x, -2 + position.y);
+		vertex( 4 + position.x, -4 + position.y);
+		vertex( 2 + position.x, position.y);
+		vertex( 4 + position.x, 4 + position.y);
+		vertex( 0 + position.x, 2 + position.y);
+		vertex( -4 + position.x, 4 + position.y);
+		vertex( -2 + position.x, 0 + position.y);
+		vertex( -4 + position.x, -4 + position.y);
+		endShape(CLOSE);
 	}
 
 	void outOfBounds(){
