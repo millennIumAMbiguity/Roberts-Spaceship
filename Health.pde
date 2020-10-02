@@ -21,10 +21,11 @@ public class Health
 	}
 
 	boolean sub(int hp){
+		/*
 		if (immunityEndTime > time){
 			return false;
 		}
-
+		*/
 		hitPoints-=hp;
 		immunityEndTime = time + immunityTime;
 		timeStamp = time;
