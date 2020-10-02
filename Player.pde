@@ -42,7 +42,7 @@ class Player extends Gameobject {
 			case 0:
 			setBulletPos(0,bulletYOffset);
 			setBulletSpeed(0,bulletYSpeed);
-			new Bullet(1,bulletSpeed,position);
+			new Bullet(1,bulletSpeed,bulletPos);
 			stats.shootsFired += 1;
 			break;
 			case 1:
