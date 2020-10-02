@@ -89,9 +89,13 @@ public class Gameobject
 			if (hp == null || obj.hp == null)
 				return false;
 
-			//dont collide with imune objects
-			if (hp.imunity() || obj.hp.imunity())
-				return false;
+			//player imunity
+			if (collisionLayer = 0)
+				if (hp.imunity())
+					return false;
+			if (obj.collisionLayer = 0)
+				if (obj.hp.imunity())
+					return false;
 		}
 		
 		//don't collide with objects on the same layer

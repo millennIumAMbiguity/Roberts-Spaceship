@@ -61,8 +61,7 @@ public class WaveController
 		else if (wave2 == null){
 			wave2 = newWave(waveCount+1);
 			wave2Amount = wave2.units.length;
-		} 
-		else {
+		} else {
 
 			if (wave1Amount < 1 && wave2Amount < 1){
 				spawnNextWave = time + spawnDelay-1;
@@ -85,17 +84,25 @@ public class WaveController
 		new Powerup(new PVector(p,-10));
 	}
 
+	boolean lastWaveWasAstriods = true;
 	Wave newWave(int waveId){
 
 		switch ((int)random(0, 3)) {
 			case 0 :
+			lastWaveWasAstriods = false;
 			return new WaveFormationShooter(waveId);
 
 			case 1 :
+			lastWaveWasAstriods = false;
 			return new WaveFormationUnit(waveId);
 		}
 
-		return new WaveFormationRandomAsteroids(waveId);
+		if (!lastWaveWasAstriods){
+			lastWaveWasAstriods = true;
+			return new WaveFormationRandomAsteroids(waveId);
+		} else {
+			return new newWave(waveId);
+		}
 	}
 
 }
