@@ -101,7 +101,7 @@ public class WaveController
 			lastWaveWasAstriods = true;
 			return new WaveFormationRandomAsteroids(waveId);
 		} else {
-			return new newWave(waveId);
+			return newWave(waveId);
 		}
 	}
 

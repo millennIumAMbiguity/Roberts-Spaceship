@@ -90,10 +90,10 @@ public class Gameobject
 				return false;
 
 			//player imunity
-			if (collisionLayer = 0)
+			if (collisionLayer == 0)
 				if (hp.imunity())
 					return false;
-			if (obj.collisionLayer = 0)
+			if (obj.collisionLayer == 0)
 				if (obj.hp.imunity())
 					return false;
 		}
