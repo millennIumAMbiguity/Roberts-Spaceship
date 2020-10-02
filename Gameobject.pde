@@ -125,15 +125,16 @@ public class Gameobject
 					gameover = true;
 					stats.gameTime = time;
 					removeFromScene();
-				} else {
+				} 
+				else {
 					hitHurt.play();
 				}
 			} else {
 				if (collisionLayer == 4) {
-						stats.powerUps++;
-						player.hp.add(1);
-						removeFromScene();
-					} else if (hp.sub(1)){
+					stats.powerUps++;
+					player.hp.add(1);
+					removeFromScene();
+				} else if (hp.sub(1)){
 					if (collisionLayer == 2){
 						score += hp.maxHP*5+fireDelay/400;
 						//if (this.getClass().getName() == "Yrgo_Shooter_Project$Enemy"){

@@ -8,7 +8,8 @@ void intro() {
 		fill(color(255,255,255,max(time/1000f-1,0)*255*max(5-(time/1000f),0)));
 		text("A Game Produced and Designed by", width/2, height/2);
 
-	} else {
+	} 
+	else {
 		//stars
 		for (Star star : starsInScene) {
 			star.move();

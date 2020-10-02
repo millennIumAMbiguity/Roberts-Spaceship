@@ -21,8 +21,7 @@ class Bullet extends Gameobject
 	void outOfBounds(){
 		if (collisionLayer != 0)
 			if (position.x < -collisionSize || position.x > width +collisionSize ||
-				position.y < -collisionSize || position.y > height+collisionSize)
-			{
+				position.y < -collisionSize || position.y > height+collisionSize){
 				if (collisionLayer == 1)
 				stats.shootsMis++;
 				removeFromScene();
