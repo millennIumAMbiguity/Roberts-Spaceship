@@ -1,4 +1,5 @@
-public class WaveController {
+public class WaveController 
+{
 	int waveCount = 0;
 
 	int wave1Amount;

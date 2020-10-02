@@ -1,4 +1,5 @@
-public class Transform {
+public class Transform 
+{
 	
 	PVector position;
 	PVector velocity;

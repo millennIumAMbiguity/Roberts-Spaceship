@@ -1,5 +1,5 @@
-public class Gameobject {
-
+public class Gameobject
+{
 	Transform transform;
 	PVector position;
 	PVector velocity;

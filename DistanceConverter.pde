@@ -1,5 +1,5 @@
-public class DistanceConverter{
-
+public class DistanceConverter
+{
 	float km = 1000f;
 	int kmLimit = 10;
 

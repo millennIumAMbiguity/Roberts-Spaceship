@@ -1,5 +1,5 @@
-class Player extends Gameobject {
-
+class Player extends Gameobject
+{
 	float playerSpeed = 8f;
 	int guideMin = 100;
 

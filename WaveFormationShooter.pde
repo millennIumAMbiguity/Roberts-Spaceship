@@ -1,5 +1,5 @@
-public class WaveFormationShooter extends Wave{
-
+public class WaveFormationShooter extends Wave
+{
 	int unitHP = 2;
 
 	PVector[] enemyShape = new PVector[] {

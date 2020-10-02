@@ -1,5 +1,5 @@
-public class Backdrop{
-
+public class Backdrop
+{
 	PVector[] zones = new PVector[10];
 	Star[] stars;
 

@@ -1,4 +1,5 @@
-public class Wave extends Gameobject{
+public class Wave extends Gameobject
+{
 
 	Enemy[] units = new Enemy[0];
 	int wave;

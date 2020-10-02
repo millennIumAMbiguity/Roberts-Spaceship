@@ -1,5 +1,5 @@
-public class Star{
-
+public class Star
+{
 	PVector spawnZone;
 	PVector position;
 	PVector velocity;

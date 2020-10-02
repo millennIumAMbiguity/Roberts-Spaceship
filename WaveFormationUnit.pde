@@ -1,5 +1,5 @@
-public class WaveFormationUnit extends Wave{
-
+public class WaveFormationUnit extends Wave
+{
 	int unitHP = 2;
 	PVector[] parts;
 	int[] partsId;

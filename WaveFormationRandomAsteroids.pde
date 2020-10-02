@@ -1,4 +1,5 @@
-public class WaveFormationRandomAsteroids extends Wave{
+public class WaveFormationRandomAsteroids extends Wave
+{
 
 	PVector[] enemyShape = new PVector[] {
 		new PVector(-8,0),

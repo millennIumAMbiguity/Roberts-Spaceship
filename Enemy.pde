@@ -1,4 +1,5 @@
-class Enemy extends Gameobject{
+class Enemy extends Gameobject
+{
 
 	Wave parent;
 

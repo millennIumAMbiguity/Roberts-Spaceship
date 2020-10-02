@@ -1,4 +1,5 @@
-public class Health {
+public class Health 
+{
 	int hitPoints;
 	int maxHP;
 
