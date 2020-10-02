@@ -8,8 +8,8 @@ void draw(){
 
 	if (titleScreen) {
 		intro();
-
-	} else {
+	} 
+	else {
 
 		for (Gameobject obj : ghostScene) {
 			obj.move();
@@ -41,9 +41,9 @@ void draw(){
 			waveController.update();
 
 			fill(0xFF718EA4);
-			gameUI();
-			
-		} else {
+			gameUI();	
+		} 
+		else {
 			fill(0xFFFFFFFF);
 			textAlign(CENTER);
 			textSize(32);
@@ -65,7 +65,6 @@ void draw(){
 			text(nf((float)stats.kills / stats.enemiesSeen * 100,0,2) + "%", width/2, height/2 + (spacing*4));
 			text(stats.shootsFired, width/2, height/2 + (spacing*5));
 			text(nf((float)(stats.shootsFired-stats.shootsMis) / stats.shootsFired * 100,0,2) + "%", width/2, height/2 + (spacing*6));
-
 		}
 
 		//add new scene objects to scene
@@ -91,7 +90,8 @@ void gameUI(){
 		if (scoreScoll > score)
 			scoreScoll = score;
 		text((int)scoreScoll+distScore, width/2, spacing*2);
-	} else {
+	} 
+	else {
 		text(score+distScore, width/2, spacing*2);
 	}
 
@@ -99,6 +99,6 @@ void gameUI(){
 		textAlign(CENTER);
 		textSize(14);
 		if (waveController.willSpawn)
-		text("Next wave in " + (int)max(waveController.spawnNextWave - time,0)/1000+ "s" , width/2, spacing*5);
+			text("Next wave in " + (int)max(waveController.spawnNextWave - time,0)/1000+ "s" , width/2, spacing*5);
 	}
 }

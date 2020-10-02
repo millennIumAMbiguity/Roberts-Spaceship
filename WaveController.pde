@@ -31,7 +31,8 @@ public class WaveController
 					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
 			}
-		} else {
+		} 
+		else {
 			wave2Amount--;
 			if (wave2Amount < 1){
 				if (spawnNextWave < time)
@@ -49,10 +50,12 @@ public class WaveController
 			wave1Amount = wave1.units.length;
 			if (wave2 == null)
 				spawnNextWave = time + spawnDelay-1;
-		} else if (wave2 == null){
+		} 
+		else if (wave2 == null){
 			wave2 = newWave(waveCount+1);
 			wave2Amount = wave2.units.length;
-		} else {
+		} 
+		else {
 
 			if (wave1Amount < 1 && wave2Amount < 1){
 				spawnNextWave = time + spawnDelay-1;

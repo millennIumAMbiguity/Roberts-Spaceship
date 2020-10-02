@@ -121,10 +121,12 @@ public class Gameobject
 					explosion.play();
 					gameover = true;
 					removeFromScene();
-				} else {
+				} 
+				else {
 					hitHurt.play();
 				}
-			} else {
+			} 
+			else {
 				if (hp.sub(1)){
 					if (collisionLayer == 2){
 						score += hp.maxHP*5+fireDelay/400;
