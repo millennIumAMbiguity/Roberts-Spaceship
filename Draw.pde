@@ -58,6 +58,10 @@ void draw(){
 			text("kills/max kills: ", width/2, height/2 + (spacing*4));
 			text("Shoots Fired: ", width/2, height/2 + (spacing*5));
 			text("Hit Ratio: ", width/2, height/2 + (spacing*6));
+			text("Wave: ", width/2, height/2 + (spacing*7));
+			text("Kills/sec: ", width/2, height/2 + (spacing*8));
+
+
 
 			textAlign(LEFT);
 			text(distConverter.convertDistance(), width/2, height/2 + (spacing*2));
@@ -65,6 +69,9 @@ void draw(){
 			text(nf((float)stats.kills / stats.enemiesSeen * 100,0,2) + "%", width/2, height/2 + (spacing*4));
 			text(stats.shootsFired, width/2, height/2 + (spacing*5));
 			text(nf((float)(stats.shootsFired-stats.shootsMis) / stats.shootsFired * 100,0,2) + "%", width/2, height/2 + (spacing*6));
+			text(stats.wave, width/2, height/2 + (spacing*7));
+			text(nf(stats.kills/(stats.gameTime/1000f),0,2) + " kps", width/2, height/2 + (spacing*8));
+			
 
 		}
 
@@ -82,7 +89,7 @@ void gameUI(){
 	
 	text("Distance: "+distConverter.convertDistance(), offsetFromSide,spacing);
 	text("Lives: " + player.hp.hitPoints, offsetFromSide, spacing*2);
-	text("Wave: " + waveController.waveCount, offsetFromSide, spacing*3);
+	text("Wave: " + max(stats.wave,0), offsetFromSide, spacing*3);
 
 	textAlign(CENTER);
 	textSize(20);

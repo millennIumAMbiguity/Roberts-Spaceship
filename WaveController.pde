@@ -13,6 +13,8 @@ public class WaveController
 
 	boolean willSpawn;
 
+	int nextPowerup = -1;
+
 	WaveController() {
 		//spawnWave();
 	}
@@ -42,8 +44,13 @@ public class WaveController
 	}
 
 	void spawnWave() {
+		if (nextPowerup < waveCount)
+			spawnPowerup();
+
 		spawnNextWave = 0;
 		willSpawn = false;
+		stats.wave++;
+		
 		if (wave1 == null){
 			wave1 = newWave(waveCount);
 			wave1Amount = wave1.units.length;
@@ -66,6 +73,13 @@ public class WaveController
 			wave2 = newWave(waveCount+1);
 			wave2Amount = wave2.units.length;
 		}
+	}
+
+	void spawnPowerup(){
+		nextPowerup = waveCount + (int)random(4,5+stats.powerUps);
+		float p = random(width/2)+width/4;
+		println("spawn powerup " + p + ", -10");
+		new Powerup(new PVector(p,-10));
 	}
 
 	Wave newWave(int waveId){

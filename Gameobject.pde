@@ -18,11 +18,11 @@ public class Gameobject
 
 	int collisionLayer;
 	/*
-	-1: powerup
 	 0: player;
 	 1: player bullets;
 	 2: enemys;
 	 3: enemy bullets
+	 4: powerup
 	*/
 
 	Gameobject() {
@@ -84,14 +84,16 @@ public class Gameobject
 	boolean collision(Gameobject obj) {
 
 		//dont collide objects without collision
-		if (hp == null || obj.hp == null)
-			return false;
+		if (collisionLayer != 4){
 
-		//dont collide with imune objects
-		if (hp.imunity() || obj.hp.imunity())
-			return false;
+			if (hp == null || obj.hp == null)
+				return false;
+
+			//dont collide with imune objects
+			if (hp.imunity() || obj.hp.imunity())
+				return false;
+		}
 		
-
 		//don't collide with objects on the same layer
 		if (collisionLayer == obj.collisionLayer)
 			return false;
@@ -116,23 +118,29 @@ public class Gameobject
 			return false;
 
 		if ( position.dist(obj.position) < collisionDist) {
-			if (collisionLayer == 0){
-				if (hp.sub(1)){
+			if (collisionLayer == 0){ //hit player
+				if (hp.sub(1)){ 
+					//player died
 					explosion.play();
 					gameover = true;
+					stats.gameTime = time;
 					removeFromScene();
 				} else {
 					hitHurt.play();
 				}
 			} else {
-				if (hp.sub(1)){
+				if (collisionLayer == 4) {
+						stats.powerUps++;
+						player.hp.add(1);
+						removeFromScene();
+					} else if (hp.sub(1)){
 					if (collisionLayer == 2){
 						score += hp.maxHP*5+fireDelay/400;
 						//if (this.getClass().getName() == "Yrgo_Shooter_Project$Enemy"){
 							stats.kills++;
 						//}
 						hitDamage.play(1,0,0.2);
-					} 
+					}
 					removeFromScene();
 				}
 			}
