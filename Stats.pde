@@ -7,4 +7,6 @@ public class Stats
 	int shootsMis;
 	int wave = -1;
 	long gameTime;
+	int timesTookDamage;
+	int wavesCleared;
 }

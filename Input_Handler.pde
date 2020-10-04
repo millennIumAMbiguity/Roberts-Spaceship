@@ -4,5 +4,9 @@ void keyPressed() {
             waveController.spawnNextWave = time+500;
 			titleScreen = false;
         }
+    } else if (gameover) {
+        if (time > stats.gameTime + 1000) {
+            reset();
+        }
     }
 }

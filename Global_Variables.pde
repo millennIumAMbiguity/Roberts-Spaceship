@@ -12,6 +12,7 @@ Player player;
 WaveController waveController;
 boolean gameover;
 long time;
+long startTime;
 
 float scrollSpeed = 0.5f;
 

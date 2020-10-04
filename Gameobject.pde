@@ -123,14 +123,14 @@ public class Gameobject
 
 		if ( position.dist(obj.position) < collisionDist) {
 			if (collisionLayer == 0){ //hit player
+				stats.timesTookDamage++;
 				if (hp.sub(1)){ 
 					//player died
 					explosion.play();
 					gameover = true;
 					stats.gameTime = time;
 					removeFromScene();
-				} 
-				else {
+				} else {
 					hitHurt.play();
 				}
 			} else {

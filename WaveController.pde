@@ -13,7 +13,7 @@ public class WaveController
 
 	boolean willSpawn;
 
-	int nextPowerup = -1;
+	int nextPowerup = 0;
 
 	WaveController() {
 		//spawnWave();
@@ -35,8 +35,10 @@ public class WaveController
 				if (spawnNextWave < time)
 					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
-				if(wave1.cleenWave)
+				if(wave1.cleenWave) {
+					stats.wavesCleared++;
 					score += cleenWaveWipePoints;
+				}
 			}
 		} 
 		else {
@@ -45,8 +47,10 @@ public class WaveController
 				if (spawnNextWave < time)
 					spawnNextWave = time + spawnDelay-1;
 				willSpawn = true;
-				if(wave1.cleenWave)
+				if(wave1.cleenWave) {
+					stats.wavesCleared++;
 					score += cleenWaveWipePoints;
+				}
 			}
 		}
 	}
