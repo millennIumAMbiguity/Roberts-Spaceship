@@ -4,6 +4,8 @@ void setup()
   fill(127);
   noCursor();
 
+  surface.setTitle("Roberts Spaceship");
+
   PFont font = createFont("PressStart2P.ttf",32,false);
   textFont(font);
   textSize(8);
