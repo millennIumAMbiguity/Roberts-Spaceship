@@ -90,7 +90,7 @@ public class WaveController
 
 	void spawnPowerup(){
 		nextPowerup = waveCount + (int)random(4,5+stats.powerUps);
-		float p = random(width/2)+width/4;
+		float p = random(sWidth/2)+sWidth/4;
 		println("spawn powerup " + p + ", -10");
 		new Powerup(new PVector(p,-10));
 	}

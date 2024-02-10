@@ -5,6 +5,7 @@ void draw(){
 
 	time = millis() - startTime;
 	background(0);
+	scale(screenScale);
 
 	if (titleScreen) {
 		intro();

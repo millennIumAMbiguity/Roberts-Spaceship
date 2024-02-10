@@ -66,8 +66,8 @@ public class Gameobject
 
 	void outOfBounds(){
 		if (collisionLayer != 0)
-			if (position.x < -collisionSize || position.x > width +collisionSize ||
-				position.y < -collisionSize || position.y > height+collisionSize)
+			if (position.x < -collisionSize || position.x > sWidth +collisionSize ||
+				position.y < -collisionSize || position.y > sHeight+collisionSize)
 			{
 				removeFromScene();
 			}
@@ -130,6 +130,7 @@ public class Gameobject
 					gameover = true;
 					stats.gameTime = time;
 					removeFromScene();
+					data.storeScore();
 				} else {
 					hitHurt.play();
 				}

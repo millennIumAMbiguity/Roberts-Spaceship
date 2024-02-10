@@ -9,6 +9,10 @@ DistanceConverter distConverter = new DistanceConverter();
 
 Player player;
 
+float screenScale = 1;
+int sWidthHalf = sWidth / 2;
+int sHeightHalf = sHeight / 2;
+
 WaveController waveController;
 boolean gameover;
 long time;
@@ -17,6 +21,7 @@ long startTime;
 float scrollSpeed = 0.5f;
 
 Stats stats = new Stats();
+Data data = new Data();
 
 int score;
 float scoreScoll;

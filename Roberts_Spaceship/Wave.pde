@@ -17,7 +17,7 @@ public class Wave extends Gameobject
 		collisionLayer = -1;
 		this.wave = wave;
 
-		position.x = width/2;
+		position.x = sWidth/2;
 		velocity.y = scrollSpeed;
 	}
 

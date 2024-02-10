@@ -17,15 +17,15 @@ class Player extends Gameobject
 		collisionLayer = 0;
 		objColor = 0xFF277554;
 		objStrokeColor = 0xFF499273;
-		position = new PVector(width/2, height - height/5);
+		position = new PVector(sWidth/2, sHeight - sHeight/5);
 
 		fireDelay = 400;
 		bulletSpeed = new PVector(0,-2f);
 	}
 
 	void move(){
-		velocity.x = mouseX - position.x;
-		velocity.y = mouseY - position.y;
+		velocity.x = mouseX / screenScale - position.x;
+		velocity.y = mouseY / screenScale - position.y;
 		velocity.limit(playerSpeed);
 		position.add(velocity);
 	}
@@ -302,9 +302,9 @@ class Player extends Gameobject
 	}
 
 	void drawGuideLine(){
-		if(position.x - mouseX > guideMin || mouseX - position.x > guideMin ||
-			position.y - mouseY > guideMin || mouseY - position.y > guideMin)
-			line(position.x,position.y,mouseX,mouseY);	
+		if(position.x - mouseX / screenScale > guideMin || mouseX / screenScale - position.x > guideMin ||
+			position.y - mouseY / screenScale > guideMin || mouseY / screenScale - position.y > guideMin)
+			line(position.x, position.y, mouseX/screenScale, mouseY/screenScale);	
 	}
 	
 }

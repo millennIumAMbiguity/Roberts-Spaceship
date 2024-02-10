@@ -27,11 +27,11 @@ public class WaveFormationRandomAsteroids extends Wave
 				newEnemyShape[k].add(enemyShape[k]);
 			}
 
-			PVector pos = new PVector(random(0, width), random(-height-(int)(sqrtwave*2)));
+			PVector pos = new PVector(random(0, sWidth), random(-sHeight-(int)(sqrtwave*2)));
 
 			PVector v = new PVector(random(-0.2f,0.2f),random(-0.2f,0.2f));
 			//dont slide out of the screen
-			if (pos.x < width*0.2f && v.x < 0 || pos.x > width*0.8f && v.x > 0) {
+			if (pos.x < sWidth*0.2f && v.x < 0 || pos.x > sWidth*0.8f && v.x > 0) {
 				v.x = -v.x;
 			}
 			v.add(velocity);

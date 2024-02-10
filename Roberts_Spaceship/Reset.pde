@@ -5,6 +5,7 @@ void reset() {
   gameover = false;
   stats = new Stats();
   score = 0;
+  data.loadScore();
 
   scene = new ArrayList<Gameobject>();
 

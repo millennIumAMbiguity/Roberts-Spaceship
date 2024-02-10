@@ -40,7 +40,7 @@ public class WaveFormationUnit extends Wave
 		}
 
 		for(int i =0; i < units.length; i++) {
-			units[i] = new Enemy(new PVector((i%2==0?width/2+((i*8)%32)+4:width/2-((i*8)%32)-4), -((i*8)/32)*16 - ((i*8)/(128))*128), 
+			units[i] = new Enemy(new PVector((i%2==0?sWidth/2+((i*8)%32)+4:sWidth/2-((i*8)%32)-4), -((i*8)/32)*16 - ((i*8)/(128))*128), 
 				parts[(i*8)/(128)], 
 				this,
 				unitHP,
@@ -70,9 +70,9 @@ public class WaveFormationUnit extends Wave
 			if (!units[partsId[i]].exist)
 				if (partsId[i] > 0)
 					partsId[i]--;
-			parts[i].x = sin((units[partsId[i]].position.y-width/4)/32f)*5f;
+			parts[i].x = sin((units[partsId[i]].position.y-sWidth/4)/32f)*5f;
 				*/
-			parts[i].x = sin((position.y+i*128+64)/32f)*width/280;
+			parts[i].x = sin((position.y+i*128+64)/32f)*sWidth/280;
 		}
 
 	}

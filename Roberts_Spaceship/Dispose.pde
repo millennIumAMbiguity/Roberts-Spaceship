@@ -1,0 +1,3 @@
+void dispose() {
+	data.storeScore();
+}

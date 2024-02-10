@@ -17,10 +17,12 @@ void setup()
   powerup     = new SoundFile(this, "Powerup.wav");
 
   music       = new SoundFile(this, "CORE - Power ISO - dead feelings.wav");
+  music.amp(0.7f);
   music.loop();
 
   time = millis();
 
+  data.loadScore();
   player = new Player();
   waveController = new WaveController();
   ghostScene = new ArrayList<Gameobject>(scene);

@@ -31,7 +31,7 @@ public class WaveFormationShooter extends Wave
 		units = new Enemy[(int)(sqrt(wave)*5)+1];
 
 		for(int i =0; i < units.length; i++) {
-			units[i] = new Enemy(new PVector(i%2==0?width/2+((i*16)%(width/2))+8:width/2-((i*16)%(width/2))-8, -((i*16)/(width/2))*32), 
+			units[i] = new Enemy(new PVector(i%2==0?sWidth/2+((i*16)%(sWidth/2))+8:sWidth/2-((i*16)%(sWidth/2))-8, -((i*16)/(sWidth/2))*32), 
 				velocity.copy(), 
 				this,
 				unitHP,
