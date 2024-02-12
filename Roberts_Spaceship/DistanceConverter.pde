@@ -1,11 +1,11 @@
 public class DistanceConverter
 {
-	int km = 1000;
+	float km = 1000;
 
 	String convertDistance(){return convert(dist);}
 
 	String convert(int d){
-		int k = d/km;
+		float k = d/km;
 		if(k >= 1000)
 			return (int)(k) + " km";
 		else if(k >= 100)
